@@ -4,7 +4,7 @@ var obstacle_scene = preload("res://scenes/objects/obstacle.tscn")
 
 var screen_size : Vector2i
 var ground_height : int
-var speed : float = 3.0
+var speed : float = 2.4
 var started = false
 var score= 0
 
