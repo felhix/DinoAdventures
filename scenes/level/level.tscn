@@ -10,7 +10,13 @@ script = ExtResource("1_xy6pn")
 [node name="Player" parent="." instance=ExtResource("1_8ufvj")]
 
 [node name="Ground" parent="." instance=ExtResource("2_kyehk")]
-position = Vector2(-9, 83)
+position = Vector2(-9, 82)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(350, -200)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
