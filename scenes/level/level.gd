@@ -16,13 +16,13 @@ func _ready():
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 
 func _process(delta: float) -> void:
-	$Player.position.x += speed
-	$Camera2D.position.x += speed
-
 	if Input.is_action_just_pressed("ui_accept"):
 		started= true
 
 	if started:
+		$Player.position.x += speed
+		$Camera2D.position.x += speed
+	
 		speed+= 1/log($Player.position.x) * delta
 
 		score += speed
