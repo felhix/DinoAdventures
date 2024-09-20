@@ -13,7 +13,8 @@ func _process(delta: float) -> void:
 		started= true
 
 	if started:
-		speed+= delta
+		speed+= 1/log($Player.position.x) * delta
+		print(speed)
 		$Player.position.x += speed
 		$Camera2D.position.x += speed
 	
