@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://rpj21y6sv7vx"]
+
+[ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="1_a3gib"]
+
+[node name="Ui" type="CanvasLayer"]
+
+[node name="Score" type="Label" parent="."]
+texture_filter = 1
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 126.0
+offset_bottom = 36.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("1_a3gib")
+theme_override_font_sizes/font_size = 23
+text = "SCORE:"
+vertical_alignment = 1
