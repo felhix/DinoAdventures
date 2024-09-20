@@ -22,7 +22,6 @@ func _process(delta: float) -> void:
 		score += speed
 		show_score()
 		
-		print(speed)
 		$Player.position.x += speed
 		$Camera2D.position.x += speed
 	
