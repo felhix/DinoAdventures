@@ -20,6 +20,12 @@ position = Vector2(453, 725)
 position = Vector2(234, 493)
 offset = Vector2(350, -170)
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
 [node name="Background" parent="." instance=ExtResource("4_mndoe")]
 offset = Vector2(0, -75)
 scale = Vector2(4, 4)
