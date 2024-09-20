@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://w1kgaimmny2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_redcu"]
+size = Vector2(40, 40)
+
+[node name="Obstacle" type="Area2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_redcu")
