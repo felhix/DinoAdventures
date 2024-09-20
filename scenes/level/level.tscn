@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1osbnqgl3ygt"]
+[gd_scene load_steps=6 format=3 uid="uid://c1osbnqgl3ygt"]
 
 [ext_resource type="PackedScene" uid="uid://ckqftuvdhv33h" path="res://scenes/player/player.tscn" id="1_8ufvj"]
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_xy6pn"]
 [ext_resource type="PackedScene" uid="uid://cpdjf5eta3h4h" path="res://scenes/objects/ground.tscn" id="2_kyehk"]
 [ext_resource type="PackedScene" uid="uid://d1bcyiw1jwn0f" path="res://scenes/background/background.tscn" id="4_mndoe"]
+[ext_resource type="PackedScene" uid="uid://rpj21y6sv7vx" path="res://scenes/UI/UI.tscn" id="5_h5m6e"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_xy6pn")
@@ -23,3 +24,5 @@ offset = Vector2(350, -170)
 offset = Vector2(0, -75)
 scale = Vector2(4, 4)
 transform = Transform2D(4, 0, 0, 4, 0, -75)
+
+[node name="Ui" parent="." instance=ExtResource("5_h5m6e")]
