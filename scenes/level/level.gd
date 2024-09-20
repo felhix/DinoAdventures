@@ -9,7 +9,7 @@ var started = false
 var score= 0
 
 func show_score():
-	$Ui.get_child(0).text = "SCORE: "+str(int(score/20))
+	$Ui.get_child(0).text = "SCORE: "+str(int(score/20))+', '+str(int(speed))
 
 func _ready():
 	screen_size = get_window().size
@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		$Player.position.x += speed
 		$Camera2D.position.x += speed
 	
-		speed+= 1/log($Player.position.x) * delta
+		speed+= 1/(2*speed*log(speed)) * delta
 
 		score += speed
 		show_score()
