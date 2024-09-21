@@ -3,17 +3,15 @@ extends Node2D
 var obstacle_scene = preload("res://scenes/objects/obstacle.tscn")
 
 var screen_size : Vector2i
-var ground_height : int
 var speed : float = 2.4
 var started = false
 var score= 0
 
 func show_score():
-	$Ui.get_child(0).text = "SCORE: "+str(int(score/20))+', '+str(int(speed))
+	$Ui.get_child(0).text = "SCORE: "+str(int(score/20))+', SPEED: '+str(int(speed))
 
 func _ready():
 	screen_size = get_window().size
-	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
