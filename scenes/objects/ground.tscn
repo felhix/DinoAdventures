@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://e1sjslkt81ff" path="res://assets/sprites/backgrounds/Jungle/4.Ground.png" id="1_xdqaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_je26y"]
-size = Vector2(4269, 156)
+size = Vector2(3840, 156)
 
 [node name="Ground" type="StaticBody2D"]
 
@@ -17,6 +17,11 @@ position = Vector2(1920, -360)
 scale = Vector2(4, 4)
 texture = ExtResource("1_xdqaq")
 
+[node name="4_ground3" type="Sprite2D" parent="."]
+position = Vector2(3200, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2134.5, -78)
+position = Vector2(1920, -78)
 shape = SubResource("RectangleShape2D_je26y")

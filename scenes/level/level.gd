@@ -29,9 +29,9 @@ func _process(delta: float) -> void:
 		$Player.position.x += speed
 		$Camera2D.position.x += speed
 
-		#update ground position
-		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
-			$Ground.position.x += screen_size.x
+		check_and_shift_ground($Ground1, $Ground2)
+		check_and_shift_ground($Ground2, $Ground1)
+
 	else:
 		show_score()
 
@@ -50,3 +50,9 @@ func add_obs(obs, x, y):
 func _on_timer_timeout() -> void:
 	#generate obstacles
 	generate_obstacle()
+
+func check_and_shift_ground(ground_to_check, other_ground):
+	var ground_width = screen_size.x * 2
+	if $Camera2D.position.x - ground_to_check.position.x > ground_width:
+		# Move the ground being checked to the right of the other ground
+		ground_to_check.position.x = other_ground.position.x + ground_width
