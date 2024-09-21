@@ -22,7 +22,8 @@ func _ready():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		started= true
-		$Timer.start()
+		generate_obstacle()
+		_reset_timer()
 
 	if started:
 		speed += (30 - speed) * delta / 120
@@ -62,6 +63,11 @@ func add_players():
 
 func _on_timer_timeout() -> void:
 	generate_obstacle()
+	_reset_timer()
+
+func _reset_timer():
+	$Timer.wait_time = randf_range(1, 3)
+	$Timer.start()
 
 func check_and_shift_ground(ground_to_check, other_ground):
 	var ground_width = screen_size.x * 2

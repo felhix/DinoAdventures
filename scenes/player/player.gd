@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 100.0
-const JUMP_VELOCITY = -1250.0
+const JUMP_VELOCITY = -1200.0
 const gravity_force = 4000
 signal game_over
 
