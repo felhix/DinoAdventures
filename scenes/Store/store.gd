@@ -13,11 +13,13 @@ const BCharScenes = [
 	preload("res://scenes/player/flying_player/pigeon/pigeon.tscn")
 ]
 
-var playerA = null
-var playerB = null
+var players = []
 
-func setPlayerA(char):
-	playerA = char
+var jumpPlayerA = "jump_player_A"
+var jumpPlayerB = "jump_player_B"
+
+func addPlayerA(char):
+	players.append(char.instantiate())
 	
-func setPlayerB(char):
-	playerB = char
+func addPlayerB(char):
+	players.append(char.instantiate())
