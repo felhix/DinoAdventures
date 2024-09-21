@@ -31,4 +31,7 @@ transform = Transform2D(6.9, 0, 0, 6.9, 0, -119)
 
 [node name="Ui" parent="." instance=ExtResource("5_h5m6e")]
 
+[node name="EnemySpawner" type="Marker2D" parent="."]
+position = Vector2(8, 591)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
