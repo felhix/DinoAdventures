@@ -2,13 +2,13 @@ extends Node
 
 @onready var labelPlayerA = get_node('PlayerA2')
 @onready var labelPlayerB = get_node('PlayerB2')
-@onready var selectPlayerA = get_node('SelectA')
-@onready var selectPlayerB = get_node('SelectB')
+@onready var selectionPlayerA = get_node('SelectA')
+@onready var selectionPlayerB = get_node('SelectB')
 @onready var Store = get_node("/root/Store")
 
 var started = false
 
-const OFFSET_LEFT = 550
+const OFFSET_LEFT = 700
 const OFFSET_TOP = 80
 const MARGIN = 300
 
@@ -18,6 +18,9 @@ var selectedPlayerB = 0
 func _ready():	
 	loadChars(Store.ACharScenes, labelPlayerA)
 	loadChars(Store.BCharScenes, labelPlayerB)
+	
+	moveSelection(labelPlayerA,selectionPlayerA, selectedPlayerA)
+	moveSelection(labelPlayerB,selectionPlayerB, selectedPlayerB)
 
 func _input(event):
 	if event.is_action_pressed("Start"):
@@ -47,11 +50,11 @@ func getIndex(i, length):
 
 func popPlayerA(i:int):
 	selectedPlayerA = getIndex(selectedPlayerA+i, len(Store.ACharScenes))
-	moveSelection(labelPlayerA,selectPlayerA, selectedPlayerA)
+	moveSelection(labelPlayerA,selectionPlayerA, selectedPlayerA)
 
 func popPlayerB(i:int):
 	selectedPlayerB = getIndex(selectedPlayerB+i, len(Store.BCharScenes))
-	moveSelection(labelPlayerB, selectPlayerB, selectedPlayerB)
+	moveSelection(labelPlayerB, selectionPlayerB, selectedPlayerB)
 	
 func moveSelection(anchor, selection, i):
 	selection.position.x = anchor.position.x+ OFFSET_LEFT + i*MARGIN
