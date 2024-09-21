@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4cr34h23mi8b"]
+[gd_scene load_steps=8 format=3 uid="uid://c4cr34h23mi8b"]
 
 [ext_resource type="Script" path="res://scenes/UI/menu/menu.gd" id="1_d0u13"]
 [ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="1_h215q"]
+[ext_resource type="Theme" uid="uid://buw4n2gkus1jy" path="res://themes/title.tres" id="2_3um7h"]
 [ext_resource type="FontFile" uid="uid://8a0to4uorpp2" path="res://assets/font/SuperPixel-m2L8j.ttf" id="2_0474j"]
 [ext_resource type="PackedScene" uid="uid://c5hcrfaf6y5uq" path="res://scenes/UI/select/select.tscn" id="3_2x0kj"]
+[ext_resource type="Theme" uid="uid://cfv88bx22voa8" path="res://themes/text.tres" id="4_jcvqi"]
 [ext_resource type="AudioStream" uid="uid://btm61bvsb6kho" path="res://assets/sounds/EricSkiff-Prologue.mp3" id="5_xhv50"]
 
 [node name="Menu" type="Control"]
@@ -32,6 +34,7 @@ offset_top = -2.0
 offset_right = 597.0
 offset_bottom = 243.0
 grow_horizontal = 2
+theme = ExtResource("2_3um7h")
 theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
 theme_override_colors/font_shadow_color = Color(0.458824, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 12
@@ -49,6 +52,7 @@ offset_top = 651.0
 offset_right = 471.0
 offset_bottom = 686.0
 scale = Vector2(2, 2)
+theme = ExtResource("4_jcvqi")
 theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
 theme_override_fonts/font = ExtResource("1_h215q")
 text = "SELECT PLAYER B: 
@@ -62,6 +66,7 @@ offset_top = 378.0
 offset_right = 470.0
 offset_bottom = 413.0
 scale = Vector2(2, 2)
+theme = ExtResource("4_jcvqi")
 theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
 theme_override_fonts/font = ExtResource("1_h215q")
 text = "SELECT PLAYER A: 
@@ -80,6 +85,7 @@ offset_top = -195.0
 offset_right = 349.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("4_jcvqi")
 theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
 theme_override_colors/font_outline_color = Color(1, 0.772549, 0.47451, 1)
 theme_override_constants/outline_size = 4

@@ -14,19 +14,16 @@ const BCharScenes = [
 ]
 
 var players = []
+var loser = null
 
 func reset():
 	players = []
 	
+func setLoser(player):
+	loser = player
 
-func addPlayerA(char):
-	addPlayer(char,  "jump_player_A")
-	
-func addPlayerB(char):
-	addPlayer(char,  "jump_player_B")
-
-func addPlayer(char, key):
+func addPlayer(char, AorB):
 	var d = char.instantiate()
-	d.jump_key = key
+	d.AorB = AorB
 	players.append(d)
 	

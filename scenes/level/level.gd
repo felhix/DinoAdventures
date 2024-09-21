@@ -60,9 +60,7 @@ func add_players():
 		get_node('.').add_child(player)
 		player.connect("game_over", Callable(self, "_on_game_over"))
 
-
 func _on_timer_timeout() -> void:
-	#generate obstacles
 	generate_obstacle()
 
 func check_and_shift_ground(ground_to_check, other_ground):
@@ -70,8 +68,6 @@ func check_and_shift_ground(ground_to_check, other_ground):
 	if $Camera2D.position.x - ground_to_check.position.x > ground_width:
 		ground_to_check.position.x = other_ground.position.x + ground_width
 
-
 func _on_game_over():
 	started = false
-#	get_tree().change_scene_to_file("res://scenes/UI/menu/menu.tscn")
-#	Store.reset()
+	get_tree().change_scene_to_file("res://scenes/UI/menu/game_over.tscn")
