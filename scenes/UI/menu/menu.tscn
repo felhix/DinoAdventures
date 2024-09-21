@@ -1,11 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4cr34h23mi8b"]
+[gd_scene load_steps=3 format=3 uid="uid://c4cr34h23mi8b"]
 
+[ext_resource type="Script" path="res://scenes/UI/menu/menu.gd" id="1_d0u13"]
 [ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="1_h215q"]
-[ext_resource type="PackedScene" uid="uid://ckqftuvdhv33h" path="res://scenes/player/ground_player/bear/bear.tscn" id="2_jer5u"]
-[ext_resource type="PackedScene" uid="uid://bct5r0b27kkdd" path="res://scenes/player/ground_player/adult_deer/adult_deer.tscn" id="3_8inrh"]
-[ext_resource type="PackedScene" uid="uid://0k1ji8flmuxo" path="res://scenes/player/ground_player/fox/fox.tscn" id="4_2j1wo"]
-[ext_resource type="PackedScene" uid="uid://cnb1dyg43g3e5" path="res://scenes/player/flying_player/bird/bird.tscn" id="5_gaeyg"]
-[ext_resource type="PackedScene" uid="uid://dc2tn34p34dm4" path="res://scenes/player/flying_player/pigeon/pigeon.tscn" id="6_xt8nc"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -14,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d0u13")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -21,13 +18,13 @@ offset_right = 1932.0
 offset_bottom = 1098.0
 color = Color(0, 0.141176, 0.890196, 1)
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -346.0
-offset_right = 347.0
+offset_left = -346.5
+offset_right = 346.5
 offset_bottom = 212.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_h215q")
@@ -36,71 +33,58 @@ text = "CHOOSE YOUR CHARACTER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Container" type="Container" parent="ColorRect"]
-layout_mode = 0
-offset_left = 579.5
-offset_top = 925.0
-offset_right = 619.5
-offset_bottom = 965.0
-
-[node name="shadow" type="ColorRect" parent="ColorRect/Container"]
+[node name="PlayerB2" type="Label" parent="."]
 layout_mode = 2
-color = Color(0, 0.141176, 0.333333, 1)
-
-[node name="button" type="ColorRect" parent="ColorRect/Container"]
-layout_mode = 2
-color = Color(0.772549, 0.890196, 0.32549, 1)
-
-[node name="Label2" type="Label" parent="ColorRect/Container"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_h215q")
-theme_override_font_sizes/font_size = 33
-text = "PRESS \"X\" TO START"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlayerA" type="Container" parent="."]
-offset_left = 1109.0
-offset_top = 410.0
-offset_right = 1149.0
-offset_bottom = 450.0
-
-[node name="PlayerA" type="Label" parent="PlayerA"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_h215q")
-text = "PLAYER A: "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Player2" parent="PlayerA" instance=ExtResource("2_jer5u")]
-position = Vector2(129, 51)
-scale = Vector2(7, 7)
-
-[node name="Player3" parent="PlayerA" instance=ExtResource("3_8inrh")]
-position = Vector2(458, 43)
-scale = Vector2(7, 7)
-
-[node name="Player" parent="PlayerA" instance=ExtResource("4_2j1wo")]
-position = Vector2(-225, 51)
-scale = Vector2(7, 7)
-
-[node name="PlayerB" type="Container" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PlayerB2" type="Label" parent="PlayerB"]
-layout_mode = 2
+offset_left = 270.0
+offset_top = 672.0
+offset_right = 430.0
+offset_bottom = 688.0
+scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("1_h215q")
 text = "PLAYER B: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Player" parent="PlayerB" instance=ExtResource("5_gaeyg")]
-position = Vector2(844, 757)
-scale = Vector2(7, 7)
+[node name="ContainerPlayerB" type="Container" parent="."]
+layout_mode = 2
+offset_left = 750.0
+offset_top = 611.0
+offset_right = 904.0
+offset_bottom = 765.0
 
-[node name="Player2" parent="PlayerB" instance=ExtResource("6_xt8nc")]
-position = Vector2(1208, 768)
-scale = Vector2(7, 7)
+[node name="ContainerPlayerA" type="Container" parent="."]
+layout_mode = 0
+offset_left = 743.0
+offset_top = 326.0
+offset_right = 897.0
+offset_bottom = 480.0
+
+[node name="PlayerA2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 269.0
+offset_top = 399.0
+offset_right = 429.0
+offset_bottom = 415.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("1_h215q")
+text = "PLAYER A: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -349.0
+offset_top = -156.0
+offset_right = 349.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_h215q")
+theme_override_font_sizes/font_size = 33
+text = "PRESS \"X\" TO START"
+horizontal_alignment = 1
+vertical_alignment = 1
