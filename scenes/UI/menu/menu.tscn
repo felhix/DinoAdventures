@@ -45,20 +45,6 @@ text = "PLAYER B: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContainerPlayerB" type="Container" parent="."]
-layout_mode = 2
-offset_left = 750.0
-offset_top = 611.0
-offset_right = 904.0
-offset_bottom = 765.0
-
-[node name="ContainerPlayerA" type="Container" parent="."]
-layout_mode = 0
-offset_left = 743.0
-offset_top = 326.0
-offset_right = 897.0
-offset_bottom = 480.0
-
 [node name="PlayerA2" type="Label" parent="."]
 layout_mode = 2
 offset_left = 269.0
