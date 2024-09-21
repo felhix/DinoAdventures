@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 100.0
-const JUMP_VELOCITY = -1200.0
-const gravity_force = 4000
+const JUMP_VELOCITY = -3000.0
+const gravity_force = 8000
 signal game_over
 
 var AorB = "A"
@@ -39,7 +39,7 @@ func canPlay():
 func _physics_process(delta: float) -> void:
 	if canPlay() and get_parent().started:
 		if not is_on_floor():
-			velocity += get_gravity()*3.4 * delta
+			velocity += get_gravity()*10 * delta
 			jumpAnim()
 		else: 
 			if canPlay() and canJump() and Input.is_action_just_pressed(jump_key()):
@@ -51,5 +51,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage():
+	velocity.x = 0
+	velocity.y = 0
 	emit_signal("game_over")
 	Store.setLoser(self.duplicate())
