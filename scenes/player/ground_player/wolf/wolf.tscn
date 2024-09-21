@@ -1,10 +1,26 @@
-[gd_scene load_steps=19 format=3 uid="uid://cchjubovpviqr"]
+[gd_scene load_steps=23 format=3 uid="uid://cchjubovpviqr"]
 
 [ext_resource type="Script" path="res://scenes/player/ground_player/bear/bear.gd" id="1_20vpq"]
 [ext_resource type="Texture2D" uid="uid://chmsyfojg8kf1" path="res://assets/sprites/animals/Outline/MiniWolf.png" id="2_xy5c3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34kgw"]
 size = Vector2(38, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqvne"]
+atlas = ExtResource("2_xy5c3")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe0xd"]
+atlas = ExtResource("2_xy5c3")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa53q"]
+atlas = ExtResource("2_xy5c3")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3w3n"]
+atlas = ExtResource("2_xy5c3")
+region = Rect2(96, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jydxk"]
 atlas = ExtResource("2_xy5c3")
@@ -64,6 +80,23 @@ region = Rect2(160, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sffh6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqvne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe0xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa53q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3w3n")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jydxk")
@@ -135,6 +168,5 @@ texture_filter = 1
 position = Vector2(0, -28)
 scale = Vector2(1.84375, 1.84375)
 sprite_frames = SubResource("SpriteFrames_sffh6")
-animation = &"run"
+animation = &"death"
 autoplay = "run"
-frame_progress = 0.0356005
