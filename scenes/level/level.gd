@@ -3,7 +3,7 @@ extends Node2D
 var obstacle_scene = preload("res://scenes/objects/obstacle.tscn")
 
 var screen_size : Vector2i
-var speed : float = 1.1
+var speed : float = 10.1
 var started = false
 var score= 0
 
@@ -19,10 +19,7 @@ func _process(delta: float) -> void:
 		$Timer.start()
 
 	if started:
-		$Player.position.x += speed
-		$Camera2D.position.x += speed
-	
-		speed+= 1/(10*speed*log(speed)) * delta
+		speed+= 1/(2*speed*log(speed)) * delta
 
 		score += speed
 		show_score()
@@ -38,7 +35,7 @@ func _process(delta: float) -> void:
 func generate_obstacle():
 		var obs
 		obs = obstacle_scene.instantiate()
-		var obs_x : int = screen_size.x + $Player.position.x + 100
+		var obs_x : int = screen_size.x + $Player.position.x + screen_size.x
 		var obs_y : int = $EnemySpawner.position.y
 		add_obs(obs, obs_x, obs_y)
 
@@ -54,5 +51,4 @@ func _on_timer_timeout() -> void:
 func check_and_shift_ground(ground_to_check, other_ground):
 	var ground_width = screen_size.x * 2
 	if $Camera2D.position.x - ground_to_check.position.x > ground_width:
-		# Move the ground being checked to the right of the other ground
 		ground_to_check.position.x = other_ground.position.x + ground_width
