@@ -5,6 +5,9 @@ const SPEED = 100.0
 const JUMP_VELOCITY = -1000.0
 const gravity_force = 4000
 
+func _ready():
+	add_to_group("players")
+
 func canJump() -> bool:
 	return false
 	
@@ -35,3 +38,6 @@ func _physics_process(delta: float) -> void:
 				runAnim()
 
 	move_and_slide()
+
+func take_damage():
+	get_tree().change_scene_to_file("res://scenes/UI/menu/menu.tscn")
