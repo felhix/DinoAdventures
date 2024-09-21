@@ -42,14 +42,11 @@ func _process(delta: float) -> void:
 		show_score()
 
 func generate_obstacle():
-		var obs
-		obs = obstacle_scene.instantiate()
-		var obs_x : int = screen_size.x + $Player.position.x + screen_size.x
-		var obs_y : int = $EnemySpawner.position.y
-		add_obs(obs, obs_x, obs_y)
-
-func add_obs(obs, x, y):
-	obs.position = Vector2i(x, y)
+	var obs
+	obs = obstacle_scene.instantiate()
+	var obs_x : int = screen_size.x + $Player.position.x
+	var obs_y : int = $EnemySpawner.position.y
+	obs.position = Vector2i(obs_x, obs_y)
 	add_child(obs)
 
 func add_players():
@@ -66,7 +63,7 @@ func _on_timer_timeout() -> void:
 	_reset_timer()
 
 func _reset_timer():
-	$Timer.wait_time = randf_range(1, 3)
+	$Timer.wait_time = randf_range(1.7, 3)
 	$Timer.start()
 
 func check_and_shift_ground(ground_to_check, other_ground):
