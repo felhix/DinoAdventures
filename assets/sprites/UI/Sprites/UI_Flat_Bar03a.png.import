@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc1ee5hc7dw4"
-path="res://.godot/imported/Spritesheet_UI_Flat.png-c5b475e49c1b6380b29630f4aeee6df6.ctex"
+uid="uid://ixe5ko5fjq0o"
+path="res://.godot/imported/UI_Flat_Bar03a.png-7a8679231005f1af711f8c354b75110a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/UI/Spritesheet_UI_Flat.png"
-dest_files=["res://.godot/imported/Spritesheet_UI_Flat.png-c5b475e49c1b6380b29630f4aeee6df6.ctex"]
+source_file="res://assets/sprites/UI/Sprites/UI_Flat_Bar03a.png"
+dest_files=["res://.godot/imported/UI_Flat_Bar03a.png-7a8679231005f1af711f8c354b75110a.ctex"]
 
 [params]
 

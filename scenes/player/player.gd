@@ -4,6 +4,7 @@ class_name Player
 const SPEED = 100.0
 const JUMP_VELOCITY = -1000.0
 const gravity_force = 4000
+signal game_over
 
 func _ready():
 	add_to_group("players")
@@ -40,4 +41,4 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage():
-	get_tree().change_scene_to_file("res://scenes/UI/menu/menu.tscn")
+	emit_signal("game_over")

@@ -15,6 +15,7 @@ func show_score():
 func _ready():
 	screen_size = get_window().size
 	add_players()
+	$Player.connect("game_over", Callable(self, "_on_game_over"))
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
@@ -63,3 +64,8 @@ func check_and_shift_ground(ground_to_check, other_ground):
 	var ground_width = screen_size.x * 2
 	if $Camera2D.position.x - ground_to_check.position.x > ground_width:
 		ground_to_check.position.x = other_ground.position.x + ground_width
+
+
+
+func _on_game_over():
+	get_tree().change_scene_to_file("res://scenes/UI/menu/menu.tscn")
