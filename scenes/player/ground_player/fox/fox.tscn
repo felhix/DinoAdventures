@@ -109,6 +109,7 @@ position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_34kgw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 7
 texture_filter = 1
 position = Vector2(0, -28)
 scale = Vector2(1.84375, 1.84375)
