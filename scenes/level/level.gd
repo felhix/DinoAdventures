@@ -15,9 +15,8 @@ func show_score():
 func _ready():
 	screen_size = get_window().size
 	add_players()
+	$Music.play()
 
-	for player in Store.players:
-		player.connect("game_over", Callable(self, "_on_game_over"))
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):

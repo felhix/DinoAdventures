@@ -30,6 +30,7 @@ label_settings = SubResource("LabelSettings_ndm8q")
 horizontal_alignment = 1
 
 [node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1095.0
 offset_top = 524.0
 offset_right = 1408.0
