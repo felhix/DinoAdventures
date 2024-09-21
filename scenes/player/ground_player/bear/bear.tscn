@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bxivk1v8a7a54" path="res://assets/sprites/animals/Outline/MiniBear.png" id="2_i0dnu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34kgw"]
-size = Vector2(40, 24)
+size = Vector2(40, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nykqm"]
 atlas = ExtResource("2_i0dnu")
@@ -119,7 +119,7 @@ animations = [{
 script = ExtResource("1_oxoen")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_34kgw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
