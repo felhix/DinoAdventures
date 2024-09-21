@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4cr34h23mi8b"]
+[gd_scene load_steps=4 format=3 uid="uid://c4cr34h23mi8b"]
 
 [ext_resource type="Script" path="res://scenes/UI/menu/menu.gd" id="1_d0u13"]
 [ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="1_h215q"]
+[ext_resource type="PackedScene" uid="uid://c5hcrfaf6y5uq" path="res://scenes/UI/select/select.tscn" id="3_2x0kj"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -74,3 +75,15 @@ theme_override_font_sizes/font_size = 33
 text = "PRESS \"X\" TO START"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SelectB" parent="." instance=ExtResource("3_2x0kj")]
+offset_left = 757.0
+offset_top = 684.0
+offset_right = 757.0
+offset_bottom = 684.0
+
+[node name="SelectA" parent="." instance=ExtResource("3_2x0kj")]
+offset_left = 762.0
+offset_top = 399.0
+offset_right = 762.0
+offset_bottom = 399.0
