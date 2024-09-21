@@ -51,9 +51,9 @@ func add_players():
 	
 	for  i in range(0, len(players)):
 		var player = players[i].instantiate()
-		player.scale = Vector2(4,4)
+		player.scale = Vector2(5,5)
 		player.position.x = 300 + i*300
-		player.position.y = $Ground1.position.y - 300
+		player.position.y = $Ground1.position.y - 120
 		get_node('.').add_child(player)
 
 func _on_timer_timeout() -> void:
