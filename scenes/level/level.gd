@@ -3,7 +3,7 @@ extends Node2D
 var obstacle_scene = preload("res://scenes/objects/obstacle.tscn")
 
 var screen_size : Vector2i
-var speed : float = 10.1
+var speed : float = 13.1
 var started = false
 var score= 0
 
@@ -19,8 +19,7 @@ func _process(delta: float) -> void:
 		$Timer.start()
 
 	if started:
-		speed+= 1/(2*speed*log(speed)) * delta
-
+		speed += (30 - speed) * delta / 120
 		score += speed
 		show_score()
 		$Player.position.x += speed
