@@ -15,10 +15,14 @@ const BCharScenes = [
 
 var players = []
 
-func add_playerA(char):
+func reset():
+	players = []
+	
+
+func addPlayerA(char):
 	addPlayer(char,  "jump_player_A")
 	
-func add_playerB(char):
+func addPlayerB(char):
 	addPlayer(char,  "jump_player_B")
 
 func addPlayer(char, key):

@@ -87,7 +87,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3rqcl")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -128,5 +128,5 @@ texture_filter = 1
 position = Vector2(0, -28)
 scale = Vector2(1.84375, 1.84375)
 sprite_frames = SubResource("SpriteFrames_sffh6")
-animation = &"idle"
+animation = &"jump"
 autoplay = "run"
