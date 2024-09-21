@@ -6,8 +6,6 @@ extends Node
 @onready var selectionPlayerB = get_node('SelectB')
 @onready var Store = get_node("/root/Store")
 
-var started = false
-
 const OFFSET_LEFT = 700
 const OFFSET_TOP = 80
 const MARGIN = 300

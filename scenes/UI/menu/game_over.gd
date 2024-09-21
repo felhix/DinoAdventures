@@ -1,13 +1,10 @@
 extends Node
 
-var started = false
-
 func _ready():
-	print(Store.loser)
 	$"player died".text = "Oh no, you died  (x_x)"
 	get_node('.').add_child(Store.loser)
-	Store.loser.scale = Vector2(7,7)
 	Store.loser.deathAnim()
+	Store.loser.scale = Vector2(7,7)
 	Store.loser.position.x = $empty.position.x
 	Store.loser.position.y = $empty.position.y
 

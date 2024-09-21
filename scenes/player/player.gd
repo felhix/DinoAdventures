@@ -31,20 +31,23 @@ func jumpAnim():
 
 func deathAnim():
 	$AnimatedSprite2D.play("death")
+	
+func canPlay():
+	return "started" in get_parent()
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not get_parent().started:
-		idleAnim()
-	else: 
+	if canPlay() and get_parent().started:
 		if not is_on_floor():
 			velocity += get_gravity()*3.4 * delta
+			runAnim()
 		else: 
-			if canJump() and Input.is_action_just_pressed(jump_key()):
+			if canPlay() and canJump() and Input.is_action_just_pressed(jump_key()):
 				velocity.y = JUMP_VELOCITY
 				jumpAnim()
 			else:
 				runAnim()
+	else: 
+		idleAnim()
 
 	move_and_slide()
 

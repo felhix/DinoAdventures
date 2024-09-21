@@ -168,5 +168,5 @@ texture_filter = 1
 position = Vector2(0, -28)
 scale = Vector2(1.84375, 1.84375)
 sprite_frames = SubResource("SpriteFrames_sffh6")
-animation = &"run"
+animation = &"death"
 autoplay = "run"

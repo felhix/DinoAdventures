@@ -2,12 +2,14 @@ extends Node2D
 
 @onready var Store = get_node("/root/Store")
 
+const DEFAULT_ANIM = "idle"
+
 var obstacle_scene = preload("res://scenes/objects/obstacle.tscn")
 
 var screen_size : Vector2i
 var speed : float = 13.1
-var started = false
 var score= 0
+var started = false
 
 func show_score():
 	$Ui.get_child(0).text = "SCORE: "+str(int(score/20))+', SPEED: '+str(int(speed))
@@ -16,7 +18,6 @@ func _ready():
 	screen_size = get_window().size
 	add_players()
 	$Music.play()
-
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
