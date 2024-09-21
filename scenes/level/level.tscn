@@ -10,7 +10,7 @@
 script = ExtResource("1_xy6pn")
 
 [node name="Player" parent="." instance=ExtResource("1_8ufvj")]
-position = Vector2(204, 590)
+position = Vector2(204, 591)
 scale = Vector2(5, 5)
 
 [node name="Ground" parent="." instance=ExtResource("2_kyehk")]
@@ -30,5 +30,8 @@ scale = Vector2(5, 5)
 transform = Transform2D(5, 0, 0, 5, 0, -127)
 
 [node name="Ui" parent="." instance=ExtResource("5_h5m6e")]
+
+[node name="EnemySpawner" type="Marker2D" parent="."]
+position = Vector2(8, 591)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

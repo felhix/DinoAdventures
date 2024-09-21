@@ -3,7 +3,7 @@ extends Node2D
 var obstacle_scene = preload("res://scenes/objects/obstacle.tscn")
 
 var screen_size : Vector2i
-var speed : float = 2.4
+var speed : float = 1.1
 var started = false
 var score= 0
 
@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		$Player.position.x += speed
 		$Camera2D.position.x += speed
 	
-		speed+= 1/(2*speed*log(speed)) * delta
+		speed+= 1/(10*speed*log(speed)) * delta
 
 		score += speed
 		show_score()
@@ -38,7 +38,7 @@ func generate_obstacle():
 		var obs
 		obs = obstacle_scene.instantiate()
 		var obs_x : int = screen_size.x + $Player.position.x + 100
-		var obs_y : int = 0
+		var obs_y : int = $EnemySpawner.position.y
 		add_obs(obs, obs_x, obs_y)
 
 func add_obs(obs, x, y):
