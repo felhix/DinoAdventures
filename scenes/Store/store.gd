@@ -15,11 +15,14 @@ const BCharScenes = [
 
 var players = []
 
-var jumpPlayerA = "jump_player_A"
-var jumpPlayerB = "jump_player_B"
-
-func addPlayerA(char):
-	players.append(char.instantiate())
+func add_playerA(char):
+	addPlayer(char,  "jump_player_A")
 	
-func addPlayerB(char):
-	players.append(char.instantiate())
+func add_playerB(char):
+	addPlayer(char,  "jump_player_B")
+
+func addPlayer(char, key):
+	var d = char.instantiate()
+	d.jump_key = key
+	players.append(d)
+	

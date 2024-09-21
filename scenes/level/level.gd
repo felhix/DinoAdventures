@@ -15,7 +15,7 @@ func show_score():
 func _ready():
 	screen_size = get_window().size
 	add_players()
-	for player in players_nodes:
+	for player in Store.players_nodes:
 		player.connect("game_over", Callable(self, "_on_game_over"))
 
 func _process(delta: float) -> void:

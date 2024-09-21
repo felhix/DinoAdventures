@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -1000.0
 const gravity_force = 4000
 signal game_over
 
+var jump_key = "ui_accept"
+
 func _ready():
 	add_to_group("players")
 
@@ -32,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 			velocity += get_gravity()*3.4 * delta
 		else: 
-			if canJump() and Input.is_action_just_pressed("ui_accept"):
+			if canJump() and Input.is_action_just_pressed(jump_key):
 				velocity.y = JUMP_VELOCITY
 				jumpAnim()
 			else:
