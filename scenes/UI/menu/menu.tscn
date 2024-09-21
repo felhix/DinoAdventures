@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4cr34h23mi8b"]
+[gd_scene load_steps=6 format=3 uid="uid://c4cr34h23mi8b"]
 
 [ext_resource type="Script" path="res://scenes/UI/menu/menu.gd" id="1_d0u13"]
 [ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="1_h215q"]
 [ext_resource type="FontFile" uid="uid://8a0to4uorpp2" path="res://assets/font/SuperPixel-m2L8j.ttf" id="2_0474j"]
 [ext_resource type="PackedScene" uid="uid://c5hcrfaf6y5uq" path="res://scenes/UI/select/select.tscn" id="3_2x0kj"]
+[ext_resource type="AudioStream" uid="uid://btm61bvsb6kho" path="res://assets/sounds/EricSkiff-Prologue.mp3" id="5_xhv50"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -18,7 +19,7 @@ script = ExtResource("1_d0u13")
 layout_mode = 0
 offset_right = 1932.0
 offset_bottom = 1098.0
-color = Color(0, 0.141176, 0.890196, 1)
+color = Color(0, 0.141176, 0.196078, 1)
 
 [node name="Title" type="Label" parent="."]
 texture_filter = 1
@@ -26,44 +27,44 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -532.0
+offset_left = -596.0
 offset_top = -2.0
-offset_right = 533.0
+offset_right = 597.0
 offset_bottom = 210.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
-theme_override_colors/font_shadow_color = Color(0.607843, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 4
+theme_override_colors/font_shadow_color = Color(0.458824, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 7
 theme_override_fonts/font = ExtResource("2_0474j")
 theme_override_font_sizes/font_size = 103
-text = "BUNNY & DEATH"
+text = "BUNNIES & DEATH"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayerB2" type="Label" parent="."]
 layout_mode = 2
-offset_left = 216.0
+offset_left = 215.0
 offset_top = 628.0
-offset_right = 376.0
+offset_right = 471.0
 offset_bottom = 663.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
 theme_override_fonts/font = ExtResource("1_h215q")
-text = "PLAYER B: 
+text = "SELECT PLAYER B: 
 (A/D)"
 vertical_alignment = 1
 
 [node name="PlayerA2" type="Label" parent="."]
 layout_mode = 2
-offset_left = 215.0
+offset_left = 214.0
 offset_top = 355.0
-offset_right = 407.0
+offset_right = 470.0
 offset_bottom = 390.0
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
 theme_override_fonts/font = ExtResource("1_h215q")
-text = "PLAYER A: 
+text = "SELECT PLAYER A: 
 (left/right)"
 vertical_alignment = 1
 
@@ -99,3 +100,7 @@ offset_left = 762.0
 offset_top = 388.0
 offset_right = 762.0
 offset_bottom = 388.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_xhv50")
+autoplay = true
