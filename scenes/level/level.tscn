@@ -10,24 +10,24 @@
 script = ExtResource("1_xy6pn")
 
 [node name="Player" parent="." instance=ExtResource("1_8ufvj")]
-position = Vector2(204, 590)
-scale = Vector2(5, 5)
+position = Vector2(214, 858)
+scale = Vector2(6, 6)
 
 [node name="Ground" parent="." instance=ExtResource("2_kyehk")]
-position = Vector2(451, 673)
+position = Vector2(451, 941)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(234, 493)
-offset = Vector2(350, -170)
+position = Vector2(5, 0)
+anchor_mode = 0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
 
 [node name="Background" parent="." instance=ExtResource("4_mndoe")]
-offset = Vector2(0, -127)
-scale = Vector2(5, 5)
-transform = Transform2D(5, 0, 0, 5, 0, -127)
+offset = Vector2(0, -119)
+scale = Vector2(6.9, 6.9)
+transform = Transform2D(6.9, 0, 0, 6.9, 0, -119)
 
 [node name="Ui" parent="." instance=ExtResource("5_h5m6e")]
 
