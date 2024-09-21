@@ -10,11 +10,8 @@
 script = ExtResource("1_xy6pn")
 
 [node name="Player" parent="." instance=ExtResource("1_8ufvj")]
-position = Vector2(214, 858)
+position = Vector2(187, 924)
 scale = Vector2(6, 6)
-
-[node name="Ground" parent="." instance=ExtResource("2_kyehk")]
-position = Vector2(451, 941)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(5, 0)
@@ -22,7 +19,6 @@ anchor_mode = 0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
-autostart = true
 
 [node name="Background" parent="." instance=ExtResource("4_mndoe")]
 offset = Vector2(0, -119)
@@ -32,6 +28,9 @@ transform = Transform2D(6.9, 0, 0, 6.9, 0, -119)
 [node name="Ui" parent="." instance=ExtResource("5_h5m6e")]
 
 [node name="EnemySpawner" type="Marker2D" parent="."]
-position = Vector2(8, 591)
+position = Vector2(5, 924)
+
+[node name="Ground" parent="." instance=ExtResource("2_kyehk")]
+position = Vector2(5, 1080)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
