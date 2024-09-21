@@ -1,11 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5hcrfaf6y5uq"]
+[gd_scene load_steps=7 format=3 uid="uid://c5hcrfaf6y5uq"]
+
+[ext_resource type="Texture2D" uid="uid://bbx5v3xufcyh6" path="res://assets/sprites/UI/selection.png" id="1_7vibp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thux8"]
+atlas = ExtResource("1_7vibp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfwnj"]
+atlas = ExtResource("1_7vibp")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hpxy"]
+atlas = ExtResource("1_7vibp")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wswk7"]
+atlas = ExtResource("1_7vibp")
+region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6ij2x"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thux8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfwnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hpxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wswk7")
+}],
 "loop": true,
 "name": &"selection",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [node name="Select" type="Control"]
@@ -13,5 +43,9 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(8.4375, 8.4375)
 sprite_frames = SubResource("SpriteFrames_6ij2x")
 animation = &"selection"
+autoplay = "selection"
+frame_progress = 0.768157

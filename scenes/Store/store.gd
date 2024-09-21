@@ -12,3 +12,12 @@ const BCharScenes = [
 	preload("res://scenes/player/ground_player/boar/boar.tscn"),
 	preload("res://scenes/player/flying_player/pigeon/pigeon.tscn")
 ]
+
+var playerA = null
+var playerB = null
+
+func setPlayerA(char):
+	playerA = char
+	
+func setPlayerB(char):
+	playerB = char

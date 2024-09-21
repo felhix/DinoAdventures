@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var Store = get_node("/root/Store")
+
 var obstacle_scene = preload("res://scenes/objects/obstacle.tscn")
 
 var screen_size : Vector2i
@@ -12,6 +14,7 @@ func show_score():
 
 func _ready():
 	screen_size = get_window().size
+	add_players()
 	$Player.connect("game_over", Callable(self, "_on_game_over"))
 
 func _process(delta: float) -> void:
@@ -43,6 +46,15 @@ func add_obs(obs, x, y):
 	obs.position = Vector2i(x, y)
 	add_child(obs)
 
+func add_players():
+	var players = [Store.playerA, Store.playerB]
+	
+	for  i in range(0, len(players)):
+		var player = players[i].instantiate()
+		player.scale = Vector2(4,4)
+		player.position.x = 300 + i*300
+		player.position.y = $Ground1.position.y - 300
+		get_node('.').add_child(player)
 
 func _on_timer_timeout() -> void:
 	#generate obstacles
