@@ -72,5 +72,6 @@ func check_and_shift_ground(ground_to_check, other_ground):
 
 
 func _on_game_over():
-	get_tree().change_scene_to_file("res://scenes/UI/menu/menu.tscn")
-	Store.reset()
+	started = false
+#	get_tree().change_scene_to_file("res://scenes/UI/menu/menu.tscn")
+#	Store.reset()

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1osbnqgl3ygt"]
+[gd_scene load_steps=7 format=3 uid="uid://c1osbnqgl3ygt"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_xy6pn"]
 [ext_resource type="PackedScene" uid="uid://cpdjf5eta3h4h" path="res://scenes/objects/ground.tscn" id="2_kyehk"]
 [ext_resource type="PackedScene" uid="uid://d1bcyiw1jwn0f" path="res://scenes/background/background.tscn" id="4_mndoe"]
 [ext_resource type="PackedScene" uid="uid://rpj21y6sv7vx" path="res://scenes/UI/HUD/Score.tscn" id="5_h5m6e"]
 [ext_resource type="AudioStream" uid="uid://bldo0lxss2pn8" path="res://assets/sounds/game_over.mp3" id="6_bgfsl"]
+[ext_resource type="PackedScene" uid="uid://dsbjo26f5lq6a" path="res://scenes/UI/menu/game_over.tscn" id="6_mosdh"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_xy6pn")
@@ -34,5 +35,8 @@ position = Vector2(3845, 1080)
 
 [node name="GameOver" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_bgfsl")
+
+[node name="GameOver2" parent="." instance=ExtResource("6_mosdh")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
