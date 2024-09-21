@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -1000.0
@@ -18,7 +18,5 @@ func _physics_process(delta: float) -> void:
 				$AnimatedSprite2D.play("jump")
 			else:
 				$AnimatedSprite2D.play("run")
-
-
 
 	move_and_slide()
