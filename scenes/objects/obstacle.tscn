@@ -177,7 +177,8 @@ texture_filter = 1
 position = Vector2(-0.2, -30)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pfimb")
-frame_progress = 0.250809
+autoplay = "default"
+frame_progress = 0.731632
 flip_h = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -186,7 +187,7 @@ position = Vector2(-0.333333, -30)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_icbc2")
 autoplay = "default"
-frame_progress = 0.576701
+frame_progress = 0.0575242
 flip_h = true
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
@@ -194,7 +195,8 @@ texture_filter = 1
 position = Vector2(0, -30)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_8itrp")
-frame_progress = 0.407718
+autoplay = "default"
+frame_progress = 0.888541
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
