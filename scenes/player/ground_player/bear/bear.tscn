@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://ckqftuvdhv33h"]
 
-[ext_resource type="Script" path="res://scenes/player/bear/bear.gd" id="1_oxoen"]
+[ext_resource type="Script" path="res://scenes/player/ground_player/bear/bear.gd" id="1_oxoen"]
 [ext_resource type="Texture2D" uid="uid://bxivk1v8a7a54" path="res://assets/sprites/animals/Outline/MiniBear.png" id="2_i0dnu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34kgw"]
