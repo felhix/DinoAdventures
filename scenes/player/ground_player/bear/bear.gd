@@ -1,1 +1,1 @@
-extends FlyingPlayer
+extends GroundPlayer
