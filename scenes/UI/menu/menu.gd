@@ -59,7 +59,7 @@ func moveSelection(anchor, selection, i):
 	
 func addPlayer(anchor, player, index):
 	anchor.add_sibling(player)
-	player.runAnim()
+	player.idleAnim()
 	
 	player.scale = Vector2(5, 5)
 	player.position.x = anchor.position.x + OFFSET_LEFT + index*MARGIN

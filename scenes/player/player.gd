@@ -13,6 +13,7 @@ func jump_key():
 
 func _ready():
 	add_to_group("players")
+	idleAnim()
 
 func canJump() -> bool:
 	return false
@@ -46,8 +47,6 @@ func _physics_process(delta: float) -> void:
 				jumpAnim()
 			else:
 				runAnim()
-	else: 
-		idleAnim()
 
 	move_and_slide()
 
