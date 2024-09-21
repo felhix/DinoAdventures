@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	if canPlay() and get_parent().started:
 		if not is_on_floor():
 			velocity += get_gravity()*3.4 * delta
-			runAnim()
+			jumpAnim()
 		else: 
 			if canPlay() and canJump() and Input.is_action_just_pressed(jump_key()):
 				velocity.y = JUMP_VELOCITY
