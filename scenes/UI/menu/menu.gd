@@ -8,8 +8,8 @@ extends Node
 
 var started = false
 
-const OFFSET_LEFT = 500
-const OFFSET_TOP = 50
+const OFFSET_LEFT = 550
+const OFFSET_TOP = 80
 const MARGIN = 300
 
 var selectedPlayerA = 0

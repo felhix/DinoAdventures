@@ -105,7 +105,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g4sh4")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -128,6 +128,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_fforb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -135,12 +136,11 @@ position = Vector2(-1.25, -8)
 shape = SubResource("RectangleShape2D_34kgw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visibility_layer = 7
 texture_filter = 1
 position = Vector2(0, -28)
 scale = Vector2(1.84375, 1.84375)
 sprite_frames = SubResource("SpriteFrames_sffh6")
-animation = &"death"
+animation = &"jump"
 autoplay = "run"
 frame = 2
 frame_progress = 1.0

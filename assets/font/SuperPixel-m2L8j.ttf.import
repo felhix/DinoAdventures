@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://csd56nwe0d050"
-path="res://.godot/imported/Apple II ALT NEG Pro.otf-1a022008d49bc3855e5f87cd2c4ea715.fontdata"
+uid="uid://8a0to4uorpp2"
+path="res://.godot/imported/SuperPixel-m2L8j.ttf-793d98828f815cdba0cc90eabfadd83b.fontdata"
 
 [deps]
 
-source_file="res://assets/font/Apple II ALT NEG Pro.otf"
-dest_files=["res://.godot/imported/Apple II ALT NEG Pro.otf-1a022008d49bc3855e5f87cd2c4ea715.fontdata"]
+source_file="res://assets/font/SuperPixel-m2L8j.ttf"
+dest_files=["res://.godot/imported/SuperPixel-m2L8j.ttf-793d98828f815cdba0cc90eabfadd83b.fontdata"]
 
 [params]
 

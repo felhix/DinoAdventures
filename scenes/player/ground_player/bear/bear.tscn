@@ -163,5 +163,3 @@ scale = Vector2(1.84375, 1.84375)
 sprite_frames = SubResource("SpriteFrames_sffh6")
 animation = &"death"
 autoplay = "run"
-frame = 3
-frame_progress = 1.0
