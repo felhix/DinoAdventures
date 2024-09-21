@@ -78,12 +78,12 @@ vertical_alignment = 1
 
 [node name="SelectB" parent="." instance=ExtResource("3_2x0kj")]
 offset_left = 757.0
-offset_top = 687.0
+offset_top = 677.0
 offset_right = 757.0
-offset_bottom = 687.0
+offset_bottom = 677.0
 
 [node name="SelectA" parent="." instance=ExtResource("3_2x0kj")]
 offset_left = 762.0
-offset_top = 392.0
+offset_top = 388.0
 offset_right = 762.0
-offset_bottom = 392.0
+offset_bottom = 388.0

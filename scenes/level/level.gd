@@ -9,6 +9,8 @@ var speed : float = 13.1
 var started = false
 var score= 0
 
+var players_nodes = []
+
 func show_score():
 	$Ui.get_child(0).text = "SCORE: "+str(int(score/20))+', SPEED: '+str(int(speed))
 
@@ -26,7 +28,10 @@ func _process(delta: float) -> void:
 		speed += (30 - speed) * delta / 120
 		score += speed
 		show_score()
-		$Player.position.x += speed
+			
+		for  i in range(0, len(players_nodes)):
+			players_nodes[i].position.x += speed
+			
 		$Camera2D.position.x += speed
 
 		check_and_shift_ground($Ground1, $Ground2)
@@ -47,14 +52,15 @@ func add_obs(obs, x, y):
 	add_child(obs)
 
 func add_players():
-	var players = [Store.playerA, Store.playerB]
+	var playersScenes = [Store.playerA, Store.playerB]
 	
-	for  i in range(0, len(players)):
-		var player = players[i].instantiate()
+	for  i in range(0, len(playersScenes)):
+		var player = playersScenes[i].instantiate()
 		player.scale = Vector2(5,5)
 		player.position.x = 300 + i*300
-		player.position.y = $Ground1.position.y - 120
+		player.position.y = $Ground1.position.y - 140
 		get_node('.').add_child(player)
+		players_nodes.append(player)
 
 func _on_timer_timeout() -> void:
 	#generate obstacles
@@ -64,7 +70,6 @@ func check_and_shift_ground(ground_to_check, other_ground):
 	var ground_width = screen_size.x * 2
 	if $Camera2D.position.x - ground_to_check.position.x > ground_width:
 		ground_to_check.position.x = other_ground.position.x + ground_width
-
 
 
 func _on_game_over():
