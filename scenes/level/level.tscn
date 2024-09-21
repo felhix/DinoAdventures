@@ -30,7 +30,10 @@ transform = Transform2D(6.9, 0, 0, 6.9, 0, -119)
 [node name="EnemySpawner" type="Marker2D" parent="."]
 position = Vector2(5, 924)
 
-[node name="Ground" parent="." instance=ExtResource("2_kyehk")]
+[node name="Ground2" parent="." instance=ExtResource("2_kyehk")]
 position = Vector2(5, 1080)
+
+[node name="Ground1" parent="." instance=ExtResource("2_kyehk")]
+position = Vector2(3845, 1080)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
