@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5hcrfaf6y5uq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ij2x"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"selection",
+"speed": 5.0
+}]
+
+[node name="Select" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6ij2x")
+animation = &"selection"
