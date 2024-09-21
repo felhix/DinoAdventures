@@ -17,7 +17,8 @@ func show_score():
 func _ready():
 	screen_size = get_window().size
 	add_players()
-	$Player.connect("game_over", Callable(self, "_on_game_over"))
+	for player in players_nodes:
+		player.connect("game_over", Callable(self, "_on_game_over"))
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
