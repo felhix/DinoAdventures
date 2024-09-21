@@ -71,10 +71,6 @@ text = "Oh no, you died  (x_x)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_4mrin")
-autoplay = true
-
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 7
