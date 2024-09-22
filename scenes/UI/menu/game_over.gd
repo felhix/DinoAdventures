@@ -4,7 +4,8 @@ const CAPTIONS = [
 	"I guess that's not bad.",
 	"Meh, try again.",
 	"Nice try, you little fart.",
-	"Good one."
+	"Good one.",
+	"Ok, you did well"
 ]
 
 func caption():
