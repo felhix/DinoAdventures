@@ -18,6 +18,7 @@ func _ready():
 	screen_size = get_window().size
 	add_players()
 	$Music.play()
+	Store.health = 1
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
