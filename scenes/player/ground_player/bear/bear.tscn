@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://scenes/player/ground_player/bear/bear.gd" id="1_oxoen"]
 [ext_resource type="Texture2D" uid="uid://bxivk1v8a7a54" path="res://assets/sprites/animals/Outline/MiniBear.png" id="2_i0dnu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_34kgw"]
-size = Vector2(40, 21)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3euaq"]
 atlas = ExtResource("2_i0dnu")
 region = Rect2(0, 224, 32, 32)
@@ -148,13 +145,12 @@ animations = [{
 "speed": 13.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgwrx"]
+size = Vector2(25, 16)
+
 [node name="Player" type="CharacterBody2D" groups=["players"]]
 collision_mask = 7
 script = ExtResource("1_oxoen")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10.5)
-shape = SubResource("RectangleShape2D_34kgw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -163,3 +159,7 @@ scale = Vector2(1.84375, 1.84375)
 sprite_frames = SubResource("SpriteFrames_sffh6")
 animation = &"death"
 autoplay = "run"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_hgwrx")
