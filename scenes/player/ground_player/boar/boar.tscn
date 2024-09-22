@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://scenes/player/ground_player/bear/bear.gd" id="1_usnwc"]
 [ext_resource type="Texture2D" uid="uid://c3b5govf44vy0" path="res://assets/sprites/animals/Outline/MiniBoar.png" id="2_vy8gt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_34kgw"]
-size = Vector2(38, 21)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_omx63"]
 atlas = ExtResource("2_vy8gt")
 region = Rect2(0, 160, 32, 32)
@@ -134,13 +131,12 @@ animations = [{
 "speed": 13.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3myq1"]
+size = Vector2(25, 16)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 7
 script = ExtResource("1_usnwc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -10.5)
-shape = SubResource("RectangleShape2D_34kgw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -149,3 +145,7 @@ scale = Vector2(1.84375, 1.84375)
 sprite_frames = SubResource("SpriteFrames_sffh6")
 animation = &"jump"
 autoplay = "run"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -13)
+shape = SubResource("RectangleShape2D_3myq1")
