@@ -7,12 +7,12 @@ const DEFAULT_ANIM = "idle"
 var obstacle_scene = preload("res://scenes/objects/obstacle.tscn")
 
 var screen_size : Vector2i
-var speed : float = 13.1
 var score= 0
 var started = false
+var wait = 1.2 as float
 
 func show_score():
-	$Ui.get_child(0).text = "SCORE: "+str(int(score/20))+', SPEED: '+str(int(speed))
+	$Ui.get_child(0).text = "SCORE: "+str(int(score/20))
 
 func _ready():
 	screen_size = get_window().size
@@ -20,13 +20,12 @@ func _ready():
 	$Music.play()
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
+	if started == false and Input.is_action_just_pressed("ui_accept"):
 		started= true
-		generate_obstacle()
 		_reset_timer()
 
 	if started:
-		speed += (30 - speed) * delta / 120
+		var speed = 25
 		score += speed
 		show_score()
 			
@@ -47,9 +46,11 @@ func generate_obstacle():
 	var obs_x : int = screen_size.x*randf_range(1.01,1.1) + $Camera2D.position.x
 	var obs_y : int = $EnemySpawner.position.y
 	obs.position = Vector2i(obs_x, obs_y)
+	
+	obs.scale = obs.scale*randf_range(0.9,1.1)
 	add_child(obs)
 	
-	if randf_range(0,2)>1:
+	if randi_range(0,3)==3:
 		var obs2 = obstacle_scene.instantiate()
 		obs2.position = Vector2i(obs_x+70, obs_y)
 		add_child(obs2)
@@ -65,10 +66,14 @@ func add_players():
 
 func _on_timer_timeout() -> void:
 	generate_obstacle()
+	print('== new timeout ==')
 	_reset_timer()
 
 func _reset_timer():
-	$Timer.wait_time = 8
+	$Timer.stop()
+	wait -= 0.4/(exp(score/100))
+	print('New timeout = '+ str(wait))
+	$Timer.wait_time = wait*randf_range(1.01,1.1)
 	$Timer.start()
 
 func check_and_shift_ground(ground_to_check, other_ground):
