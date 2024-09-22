@@ -15,6 +15,7 @@ const BCharScenes = [
 
 var players = []
 var loser = null
+var health : int = 0
 
 func reset():
 	players = []

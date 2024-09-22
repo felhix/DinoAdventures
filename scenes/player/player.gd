@@ -51,6 +51,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage():
+	Store.health -= 1
+	if Store.health < 0:
+		die()
+
+func die():
 	velocity.x = 0
 	velocity.y = 0
 	emit_signal("game_over")
