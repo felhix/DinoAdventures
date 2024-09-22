@@ -44,10 +44,14 @@ func _process(delta: float) -> void:
 func generate_obstacle():
 	var obs
 	obs = obstacle_scene.instantiate()
-	var obs_x : int = screen_size.x + $Player.position.x
+	var obs_x : int = screen_size.x*randf_range(1.2,2) + $Player.position.x
 	var obs_y : int = $EnemySpawner.position.y
 	obs.position = Vector2i(obs_x, obs_y)
 	add_child(obs)
+	if randf_range(0,2)>1:
+		var obs2 = obstacle_scene.instantiate()
+		obs2.position = Vector2i(obs_x+70, obs_y)
+		add_child(obs2)
 
 func add_players():
 	for  i in range(0, len(Store.players)):
@@ -63,7 +67,7 @@ func _on_timer_timeout() -> void:
 	_reset_timer()
 
 func _reset_timer():
-	$Timer.wait_time = randf_range(1.7, 3)
+	$Timer.wait_time = 8
 	$Timer.start()
 
 func check_and_shift_ground(ground_to_check, other_ground):
