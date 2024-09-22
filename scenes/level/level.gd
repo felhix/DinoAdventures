@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 
 	if started:
 		var speed = 25
-		Store.score += speed/1000.0*multiplier()*3.0
+		Store.score += speed/1000.0*pow(multiplier(), 3)
 		show_score()
 			
 		for  i in range(0, len(Store.players)):
@@ -45,7 +45,7 @@ func multiplier():
 func generate_obstacle():
 	var obs
 	obs = obstacle_scene.instantiate()
-	var obs_x : int = screen_size.x*randf_range(1.01,1.1) + $Camera2D.position.x
+	var obs_x : int = screen_size.x*randf_range(0.95,1.15) + $Camera2D.position.x
 	var obs_y : int = $EnemySpawner.position.y
 	obs.position = Vector2i(obs_x, obs_y)
 	
@@ -64,7 +64,7 @@ func add_players():
 		player.position.x = 300 + i*300
 		player.position.y = $Ground1.position.y - 140
 		get_node('.').add_child(player)
-		player.connect("game_over", Callable(self, "_on_game_over"))
+		# player.connect("game_over", Callable(self, "_on_game_over"))
 
 func _on_timer_timeout() -> void:
 	generate_obstacle()
