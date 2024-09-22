@@ -7,12 +7,10 @@ const DEFAULT_ANIM = "idle"
 var obstacle_scene = preload("res://scenes/objects/obstacle.tscn")
 
 var screen_size : Vector2i
-var score= 0
 var started = false
-var wait = 1.2 as float
 
 func show_score():
-	$Ui.get_child(0).text = "SCORE: "+str(int(score/20))
+	$Ui.get_child(0).text = "SCORE: "+str(int(Store.score))
 
 func _ready():
 	screen_size = get_window().size
@@ -27,7 +25,7 @@ func _process(delta: float) -> void:
 
 	if started:
 		var speed = 25
-		score += speed
+		Store.score += speed/1000.0*pow(multiplier(), 3)
 		show_score()
 			
 		for  i in range(0, len(Store.players)):
@@ -40,11 +38,14 @@ func _process(delta: float) -> void:
 
 	else:
 		show_score()
+		
+func multiplier():
+	return len(str(int(Store.score)))
 
 func generate_obstacle():
 	var obs
 	obs = obstacle_scene.instantiate()
-	var obs_x : int = screen_size.x*randf_range(1.01,1.1) + $Camera2D.position.x
+	var obs_x : int = screen_size.x*randf_range(0.95,1.15) + $Camera2D.position.x
 	var obs_y : int = $EnemySpawner.position.y
 	obs.position = Vector2i(obs_x, obs_y)
 	
@@ -63,18 +64,15 @@ func add_players():
 		player.position.x = 300 + i*300
 		player.position.y = $Ground1.position.y - 140
 		get_node('.').add_child(player)
-		player.connect("game_over", Callable(self, "_on_game_over"))
+		# player.connect("game_over", Callable(self, "_on_game_over"))
 
 func _on_timer_timeout() -> void:
 	generate_obstacle()
-	print('== new timeout ==')
 	_reset_timer()
 
 func _reset_timer():
 	$Timer.stop()
-	wait -= 0.4/(exp(score/100))
-	print('New timeout = '+ str(wait))
-	$Timer.wait_time = wait*randf_range(1.01,1.1)
+	$Timer.wait_time = 1.3*(10.0/(multiplier()*2.0+10.0))*randf_range(1.01,1.1)
 	$Timer.start()
 
 func check_and_shift_ground(ground_to_check, other_ground):
