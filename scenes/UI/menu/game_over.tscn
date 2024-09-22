@@ -92,6 +92,28 @@ text = "PRESS \"X\" TO GO BACK TO MAIN MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -954.0
+offset_top = -370.0
+offset_right = 957.0
+offset_bottom = -254.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_outline_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_jf6n4")
+theme_override_font_sizes/font_size = 46
+text = "100 points. Not bad."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="GameOver" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_4mrin")
 autoplay = true
