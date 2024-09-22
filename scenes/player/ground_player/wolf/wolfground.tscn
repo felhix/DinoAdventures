@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bng716thstjhk" path="res://scenes/player/ground_player/ground_player.tscn" id="1_q244c"]
 
 [node name="GroundPlayer" instance=ExtResource("1_q244c")]
+
+[node name="Timer" parent="." index="0"]
+wait_time = 1.0

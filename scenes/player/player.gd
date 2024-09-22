@@ -7,6 +7,8 @@ const gravity_force = 8000
 signal game_over
 
 var AorB = "A"
+var is_blinking : bool = false
+var is_invicible : bool = false
 
 func jump_key():
 	return 'jump_player_'+ AorB
@@ -51,10 +53,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage():
-	Store.health -= 1
-	if Store.health < 0:
-		die()
-	$Timer.start()
+	if is_invicible == false:
+		Store.health -= 1
+		if Store.health < 0:
+			die()
+		set_invicible_timer()
 
 func die():
 	velocity.x = 0
@@ -62,8 +65,13 @@ func die():
 	emit_signal("game_over")
 	Store.setLoser(self.duplicate())
 	
-
-
+func set_invicible_timer():
+	$Timer.start()
+	print("début")
+	is_invicible = true
+	is_blinking = true
 
 func _on_timer_timeout() -> void:
-	print("kikou")
+	print("c'est la fin")
+	is_invicible = false
+	is_blinking = false

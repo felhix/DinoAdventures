@@ -160,6 +160,9 @@ animations = [{
 collision_mask = 7
 script = ExtResource("1_20vpq")
 
+[node name="Timer" parent="." index="0"]
+wait_time = 1.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 position = Vector2(1.5, -13)
 shape = SubResource("RectangleShape2D_34kgw")
