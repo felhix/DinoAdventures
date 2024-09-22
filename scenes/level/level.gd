@@ -44,10 +44,11 @@ func _process(delta: float) -> void:
 func generate_obstacle():
 	var obs
 	obs = obstacle_scene.instantiate()
-	var obs_x : int = screen_size.x*randf_range(1.2,2) + $Player.position.x
+	var obs_x : int = screen_size.x*randf_range(1.01,1.1) + $Camera2D.position.x
 	var obs_y : int = $EnemySpawner.position.y
 	obs.position = Vector2i(obs_x, obs_y)
 	add_child(obs)
+	
 	if randf_range(0,2)>1:
 		var obs2 = obstacle_scene.instantiate()
 		obs2.position = Vector2i(obs_x+70, obs_y)
