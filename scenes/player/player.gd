@@ -54,9 +54,16 @@ func take_damage():
 	Store.health -= 1
 	if Store.health < 0:
 		die()
+	$Timer.start()
 
 func die():
 	velocity.x = 0
 	velocity.y = 0
 	emit_signal("game_over")
 	Store.setLoser(self.duplicate())
+	
+
+
+
+func _on_timer_timeout() -> void:
+	print("kikou")
