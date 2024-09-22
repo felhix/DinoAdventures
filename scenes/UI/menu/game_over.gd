@@ -1,5 +1,6 @@
 extends Node
 
+
 func _ready():
 	$"player died".text = "Oh no, you died  (x_x)"
 	get_node('.').add_child(Store.loser)
