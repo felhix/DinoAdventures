@@ -2,10 +2,10 @@ extends Node
 
 const CAPTIONS = [
 	"I guess that's not bad.",
-	"Meh, try again.",
-	"Nice try, you little fart.",
+	"You can do it.",
+	"Nice try, you little fox.",
 	"Good one.",
-	"Ok, you did well"
+	"Ok, you rock."
 ]
 
 func caption():

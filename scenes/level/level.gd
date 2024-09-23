@@ -64,7 +64,7 @@ func add_players():
 		player.position.x = 300 + i*300
 		player.position.y = $Ground1.position.y - 140
 		get_node('.').add_child(player)
-		# player.connect("game_over", Callable(self, "_on_game_over"))
+		player.connect("game_over", Callable(self, "_on_game_over"))
 
 func _on_timer_timeout() -> void:
 	generate_obstacle()
