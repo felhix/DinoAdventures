@@ -9,6 +9,7 @@ signal game_over
 var AorB = "A"
 var is_blinking : bool = false
 var is_invicible : bool = false
+var speed_multiplier : float = 1.0
 
 func jump_key():
 	return 'jump_player_'+ AorB
@@ -53,15 +54,13 @@ func _physics_process(delta: float) -> void:
 				jumpAnim()
 			else:
 				runAnim()
+		speed_multiplier += 0.0005
 
 	move_and_slide()
 
 func take_damage():
-	if is_invicible == false:
-		Store.health -= 1
-		if Store.health < 0:
-			die()
-		set_invicible_timer()
+	speed_multiplier = 1.0
+#	speed_multiplier = speed_multiplier - ((speed_multiplier - 1)/2)
 
 func die():
 	velocity.x = 0

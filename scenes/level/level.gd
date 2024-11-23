@@ -30,10 +30,13 @@ func _process(delta: float) -> void:
 		Store.score += frame_speed/1000.0*pow(multiplier(), 3)
 		show_score()
 			
+		var min_speed = Store.players[0].speed_multiplier
 		for  i in range(0, len(Store.players)):
-			Store.players[i].position.x += frame_speed
+			if Store.players[i].speed_multiplier < min_speed:
+				min_speed = Store.players[i].speed_multiplier
+			Store.players[i].position.x += frame_speed * Store.players[i].speed_multiplier			
 			
-		$Camera2D.position.x += frame_speed
+		$Camera2D.position.x += frame_speed * min_speed
 
 		check_and_shift_ground($Ground1, $Ground2)
 		check_and_shift_ground($Ground2, $Ground1)
