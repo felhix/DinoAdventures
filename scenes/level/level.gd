@@ -5,6 +5,9 @@ extends Node2D
 const DEFAULT_ANIM = "idle"
 const CHANGE_OBSTACLE = 3
 const MASTER_SPEED = 1400
+const MIN_OBSTACLE_X_DISTANCE = 150
+const SCALE_ON_SCORE_DIVISER = 1_000
+const DISTANCE_ON_SCORE_DIVISER = 1_000
 
 var obstacle_scene = preload("res://scenes/objects/obstacle.tscn")
 
@@ -52,19 +55,19 @@ func _process(delta: float) -> void:
 func multiplier():
 	return len(str(int(Store.score)))
 
-func generate_obstacle():
+func generate_obstacle(score: int):
 	var obs
 	obs = obstacle_scene.instantiate()
 	var obs_x : int = screen_size.x*randf_range(0.95,1.15) + $Camera2D.position.x
 	var obs_y : int = $EnemySpawner.position.y
 	obs.position = Vector2i(obs_x, obs_y)
 	
-	obs.scale = obs.scale*randf_range(0.9,1.1)
+	obs.scale = obs.scale * randf_range(0.75,1.25) * maxf(1.0, score / SCALE_ON_SCORE_DIVISER)
 	add_child(obs)
 	
 	if randi_range(0,CHANGE_OBSTACLE)==0:
 		var obs2 = obstacle_scene.instantiate()
-		obs2.position = Vector2i(obs_x+70, obs_y)
+		obs2.position = Vector2i(obs_x + maxf(MIN_OBSTACLE_X_DISTANCE, score / DISTANCE_ON_SCORE_DIVISER), obs_y)
 		add_child(obs2)
 
 func add_players():
@@ -77,7 +80,7 @@ func add_players():
 		player.connect("game_over", Callable(self, "_on_game_over"))
 
 func _on_timer_timeout() -> void:
-	generate_obstacle()
+	generate_obstacle(Store.score)
 	_reset_timer()
 
 func _reset_timer():
