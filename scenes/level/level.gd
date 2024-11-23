@@ -25,7 +25,9 @@ func _ready():
 	
 	$WinningEffect_tscn.scale = Vector2(5,5)
 	$WinningEffect_tscn.position.y = get_viewport().size.y*0.9
-	$WinningEffect_tscn.position.x = get_viewport().size.x
+	$WinningEffect_tscn.position.x = get_viewport().size.x - 100
+	$WinningEffect_tscn/FinishLine.modulate.a = 0.0
+	
 	Store.health = 1
 
 func _process(delta: float) -> void:	
@@ -44,8 +46,7 @@ func _process(delta: float) -> void:
 		var min_pos = min(Store.playerA.position.x,Store.playerB.position.x) 
 		
 		$Camera2D.position.x = min_pos - 200
-		$WinningEffect_tscn.position.x = min_pos + get_viewport().size.x
-		$FinishLine.position.x += min_pos + get_viewport().size.x
+		$WinningEffect_tscn.position.x = min_pos + get_viewport().size.x - 100
 
 		check_and_shift_ground($Ground1, $Ground2)
 		check_and_shift_ground($Ground2, $Ground1)

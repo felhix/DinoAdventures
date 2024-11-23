@@ -67,7 +67,7 @@ func set_timer(slow_down):
 	$Timer.start()
 	is_invicible = true
 	is_blinking = true
-	speed_multiplier = 0.9 if slow_down else 1.1
+	speed_multiplier = 0.7 if slow_down else 1.1
 	
 
 func _on_timer_timeout() -> void:
