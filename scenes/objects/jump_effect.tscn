@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2x1bl68xw18u"]
+
+[ext_resource type="Texture2D" uid="uid://b7n1g5upmjve" path="res://assets/sprites/effects/PNG/fx2_impact_shock_large_brown/frame0001.png" id="14_q0dm7"]
+[ext_resource type="Texture2D" uid="uid://c6thnii04gyl1" path="res://assets/sprites/effects/PNG/fx2_impact_shock_large_brown/frame0002.png" id="15_d3j8w"]
+[ext_resource type="Texture2D" uid="uid://bm3i7g7xjwh2f" path="res://assets/sprites/effects/PNG/fx2_impact_shock_large_brown/frame0003.png" id="16_tylfn"]
+[ext_resource type="Texture2D" uid="uid://2binq5sdh730" path="res://assets/sprites/effects/PNG/fx2_impact_shock_large_brown/frame0004.png" id="17_xhhg2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjrop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_q0dm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_d3j8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_tylfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xhhg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_d3j8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_tylfn")
+}],
+"loop": false,
+"name": &"flare",
+"speed": 12.0
+}]
+
+[node name="Jump_Effect" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, -22)
+scale = Vector2(1.8, 1.8)
+sprite_frames = SubResource("SpriteFrames_qjrop")
+animation = &"flare"
+autoplay = "flare"
+frame_progress = 0.899352
