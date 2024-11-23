@@ -1,18 +1,18 @@
 extends Node
 
 const CAPTIONS = [
-	"I guess that's not bad.",
-	"You can do it.",
-	"Nice try, you little fox.",
+	"You are so slow",
+	"Try harder next time.",
+	"Nice try, you little friend.",
 	"Good one.",
 	"Ok, you rock."
 ]
 
 func caption():
-	return CAPTIONS[randi_range(0,len(CAPTIONS))]
+	return CAPTIONS[randi_range(0,len(CAPTIONS)-1 )]
 
 func _ready():
-	$"player died".text = "Oh no, you died  (x_x)"
+	$"player loose".text = "Oh no, you loose  (x_x)"
 	$score.text = str(int(Store.score))+ " points. "+caption()
 	get_node('.').add_child(Store.loser)
 	Store.loser.deathAnim()
