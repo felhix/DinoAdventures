@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://0k1ji8flmuxo"]
+[gd_scene load_steps=21 format=3 uid="uid://0k1ji8flmuxo"]
 
-[ext_resource type="Script" path="res://scenes/player/ground_player/bear/bear.gd" id="1_u71tt"]
 [ext_resource type="PackedScene" uid="uid://bng716thstjhk" path="res://scenes/player/ground_player/ground_player.tscn" id="1_q244c"]
+[ext_resource type="Script" path="res://scenes/player/ground_player/bear/bear.gd" id="1_u71tt"]
 [ext_resource type="Texture2D" uid="uid://djw0cjv2p2pgu" path="res://assets/sprites/animals/Outline/MiniFox.png" id="2_ewqjq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3nqgy"]
@@ -136,10 +136,9 @@ animations = [{
 size = Vector2(25, 16)
 
 [node name="Fox" instance=ExtResource("1_q244c")]
-collision_mask = 7
 script = ExtResource("1_u71tt")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
 visibility_layer = 7
 texture_filter = 1
 position = Vector2(0, -28)
@@ -148,6 +147,6 @@ sprite_frames = SubResource("SpriteFrames_sffh6")
 animation = &"jump"
 autoplay = "run"
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_ma3qd")
