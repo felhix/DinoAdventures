@@ -78,14 +78,9 @@ func add_players():
 		player.position.x = 300 + i*300
 		player.position.y = $Ground1.position.y - 140
 		get_node('.').add_child(player)
-<<<<<<< HEAD
 	
-	Store.playerA.connect("game_over", Callable(Store.playerB, "_on_game_over"))
-	Store.playerB.connect("game_over", Callable(Store.playerA, "_on_game_over"))
-=======
 		player.game_over.connect(_on_game_over)
 		player.jump.connect(_on_jump)
->>>>>>> c5906a618fbc06f6f90d483c41ab54c1f5ab2f50
 
 func _on_timer_timeout() -> void:
 	generate_obstacle(Store.score)

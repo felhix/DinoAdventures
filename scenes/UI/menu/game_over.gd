@@ -15,10 +15,10 @@ func _ready():
 	$"player died".text = "Oh no, you loose  (x_x)"
 	$score.text = str(int(Store.score))+ " points. "+caption()
 	get_node('.').add_child(Store.loser)
-	Store.loser.deathAnim()
-	Store.loser.scale = Vector2(7,7)
 	Store.loser.velocity.x = 0
 	Store.loser.velocity.y = 0
+	Store.loser.deathAnim()
+	Store.loser.scale = Vector2(7,7)
 	Store.loser.position.x = $empty.position.x
 	Store.loser.position.y = $empty.position.y
 
