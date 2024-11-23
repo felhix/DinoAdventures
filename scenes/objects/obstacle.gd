@@ -1,13 +1,16 @@
 extends Area2D
 
-var sprites: Array = []
+@onready var MiniThief: AnimatedSprite2D = $AnimatedSprite2D
+@onready var MiniMiner: AnimatedSprite2D = $AnimatedSprite2D2
+@onready var MiniHunter: AnimatedSprite2D = $AnimatedSprite2D3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	sprites.append($AnimatedSprite2D2)
-	sprites.append($AnimatedSprite2D)
-	sprites.append($AnimatedSprite2D3)
-	select_random_sprite_to_be_visible(sprites)
+	select_random_sprite_to_be_visible([
+		MiniThief,
+		MiniMiner,
+		MiniHunter
+	])
 	add_to_group("obstacles")
 
 func _on_body_entered(body):
