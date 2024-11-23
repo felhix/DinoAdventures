@@ -157,7 +157,6 @@ animations = [{
 }]
 
 [node name="Wolf" instance=ExtResource("1_q244c")]
-collision_mask = 7
 script = ExtResource("1_20vpq")
 
 [node name="Timer" parent="." index="0"]

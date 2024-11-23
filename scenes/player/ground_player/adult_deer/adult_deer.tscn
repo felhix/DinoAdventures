@@ -137,7 +137,6 @@ animations = [{
 size = Vector2(25, 16)
 
 [node name="Deer" instance=ExtResource("1_q244c")]
-collision_mask = 7
 script = ExtResource("1_ilwm4")
 
 [node name="Timer" parent="." index="0"]
