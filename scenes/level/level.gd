@@ -56,7 +56,7 @@ func multiplier():
 	return len(str(int(Store.score)))
 
 func generate_obstacle(score: int, delta_x = 0):
-	var obs: Obstacle = obstacle_scene.instantiate()
+	var obs = obstacle_scene.instantiate()
 	add_child(obs)
 	
 	obs.scale = obs.scale * randf_range(1, 1.25)
