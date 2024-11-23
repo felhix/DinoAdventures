@@ -1,8 +1,13 @@
-extends Area2D
+class_name Obstacle extends Area2D
 
 @onready var MiniThief: AnimatedSprite2D = $AnimatedSprite2D
 @onready var MiniMiner: AnimatedSprite2D = $AnimatedSprite2D2
 @onready var MiniHunter: AnimatedSprite2D = $AnimatedSprite2D3
+@onready var CollisingShape: CollisionShape2D = $CollisionShape2D
+
+@export var width: int:
+	get:
+		return CollisingShape.shape.radius * 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

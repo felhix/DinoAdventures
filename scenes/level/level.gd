@@ -9,7 +9,7 @@ const MIN_OBSTACLE_X_DISTANCE = 150
 const SCALE_ON_SCORE_DIVISER = 1_000
 const DISTANCE_ON_SCORE_DIVISER = 1_000
 
-var obstacle_scene = preload("res://scenes/objects/obstacle.tscn")
+var obstacle_scene: Resource = preload("res://scenes/objects/obstacle.tscn")
 
 var screen_size : Vector2i
 var started = false
@@ -48,27 +48,26 @@ func _process(delta: float) -> void:
 
 		check_and_shift_ground($Ground1, $Ground2)
 		check_and_shift_ground($Ground2, $Ground1)
-
+ 
 	else:
 		show_score()
 		
 func multiplier():
 	return len(str(int(Store.score)))
 
-func generate_obstacle(score: int):
-	var obs
-	obs = obstacle_scene.instantiate()
-	var obs_x : int = screen_size.x*randf_range(0.95,1.15) + $Camera2D.position.x
+func generate_obstacle(score: int, delta_x = 0):
+	var obs: Obstacle = obstacle_scene.instantiate()
+	add_child(obs)
+	
+	obs.scale = obs.scale * randf_range(1, 1.25)
+	
+	var obs_x : int = delta_x + screen_size.x + $Camera2D.position.x + (obs.width * obs.scale.x) * 2
 	var obs_y : int = $EnemySpawner.position.y
 	obs.position = Vector2i(obs_x, obs_y)
 	
-	obs.scale = obs.scale * randf_range(0.75,1.25)
-	add_child(obs)
+	if randi_range(0, CHANGE_OBSTACLE)==0:
+		generate_obstacle(score, delta_x + MIN_OBSTACLE_X_DISTANCE)
 	
-	if randi_range(0,3)==3:
-		var obs2 = obstacle_scene.instantiate()
-		obs2.position = Vector2i(obs_x + maxf(MIN_OBSTACLE_X_DISTANCE, score / DISTANCE_ON_SCORE_DIVISER), obs_y)
-		add_child(obs2)
 
 func add_players():
 	for  i in range(0, len(Store.players)):
