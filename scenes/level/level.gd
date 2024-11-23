@@ -1,4 +1,4 @@
-extends Node2D
+class_name Level extends Node2D
 
 @onready var Store = get_node("/root/Store")
 
@@ -9,7 +9,8 @@ const MIN_OBSTACLE_X_DISTANCE = 150
 const SCALE_ON_SCORE_DIVISER = 1_000
 const DISTANCE_ON_SCORE_DIVISER = 1_000
 
-var obstacle_scene: Resource = preload("res://scenes/objects/obstacle.tscn")
+const obstacle_scene: Resource = preload("res://scenes/objects/obstacle.tscn")
+const jump_effect_scene: Resource = preload("res://scenes/objects/jump_effect.tscn")
 
 var screen_size : Vector2i
 var started = false
@@ -72,12 +73,13 @@ func generate_obstacle(score: int, delta_x = 0):
 func add_players():
 	var players = [Store.playerA, Store.playerB]
 	for  i in range(0, 2):
-		var player = players[i]
+		var player: Player  = players[i]
 		player.scale = Vector2(5,5)
 		player.position.x = 300 + i*300
 		player.position.y = $Ground1.position.y - 140
 		get_node('.').add_child(player)
-		player.connect("game_over", Callable(self, "_on_game_over"))
+		player.game_over.connect(_on_game_over)
+		player.jump.connect(_on_jump)
 
 func _on_timer_timeout() -> void:
 	generate_obstacle(Store.score)
@@ -96,3 +98,10 @@ func check_and_shift_ground(ground_to_check, other_ground):
 func _on_game_over():
 	started = false
 	get_tree().change_scene_to_file("res://scenes/UI/menu/game_over.tscn")
+
+func _on_jump(position: Vector2): 
+	var jump_effect = jump_effect_scene.instantiate()
+	jump_effect.position = position
+	
+	add_child(jump_effect)
+	

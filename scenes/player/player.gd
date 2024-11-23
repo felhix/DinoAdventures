@@ -1,8 +1,8 @@
-extends CharacterBody2D
-class_name Player
+class_name Player extends CharacterBody2D
 
 const JUMP_VELOCITY = -3000.0
-signal game_over
+signal game_over()
+signal jump(position: Vector2)
 
 var AorB = "A"
 var is_blinking : bool = false
@@ -53,6 +53,7 @@ func _physics_process(delta: float) -> void:
 		else: 
 			if canPlay() and canJump() and Input.is_action_just_pressed(jump_key()):
 				velocity.y = JUMP_VELOCITY
+				jump.emit(self.position)
 				jumpAnim()
 			else:
 				runAnim()
