@@ -101,8 +101,8 @@ func _on_game_over():
 	get_tree().change_scene_to_file("res://scenes/UI/menu/game_over.tscn")
 
 func _on_jump(position: Vector2): 
-	var jump_effect = jump_effect_scene.instantiate()
+	var jump_effect: JumpEffect = jump_effect_scene.instantiate()
 	jump_effect.position = position
-	
 	add_child(jump_effect)
+	jump_effect.finished.connect(jump_effect.queue_free)
 	
