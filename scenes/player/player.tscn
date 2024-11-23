@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_qmhtn"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 6
 script = ExtResource("1_qmhtn")
 
 [node name="Timer" type="Timer" parent="."]
