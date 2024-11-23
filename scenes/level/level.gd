@@ -24,14 +24,14 @@ func _process(delta: float) -> void:
 		_reset_timer()
 
 	if started:
-		var speed = 25
+		var speed = 1400
 		Store.score += speed/1000.0*pow(multiplier(), 3)
 		show_score()
 			
 		for  i in range(0, len(Store.players)):
-			Store.players[i].position.x += speed
+			Store.players[i].position.x += speed * delta
 			
-		$Camera2D.position.x += speed
+		$Camera2D.position.x += speed * delta
 
 		check_and_shift_ground($Ground1, $Ground2)
 		check_and_shift_ground($Ground2, $Ground1)
