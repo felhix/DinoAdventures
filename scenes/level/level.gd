@@ -20,12 +20,14 @@ func show_score():
 
 func _ready():
 	screen_size = get_window().size
-	add_players()
+	initialize_scene()
 	$Music.play()
 	
 	$WinningEffect_tscn.scale = Vector2(5,5)
 	$WinningEffect_tscn.position.y = get_viewport().size.y*0.9
-	$WinningEffect_tscn.position.x = get_viewport().size.x
+	$WinningEffect_tscn.position.x = get_viewport().size.x - 100
+	$WinningEffect_tscn/FinishLine.modulate.a = 0.0
+	
 	Store.health = 1
 
 func _process(delta: float) -> void:	
@@ -38,14 +40,13 @@ func _process(delta: float) -> void:
 		Store.score += frame_speed/1000.0*pow(multiplier(), 3)
 		show_score()
 			
-		var min_speed = min(Store.playerA.speed_multiplier,Store.playerB.speed_multiplier) 
 	
-		Store.playerA.position.x += frame_speed * Store.playerA.speed_multiplier			
-		Store.playerB.position.x += frame_speed * Store.playerA.speed_multiplier			
-			
-		$Camera2D.position.x += min_speed * frame_speed
-		$WinningEffect_tscn.position.x += min_speed * frame_speed
-		$FinishLine.position.x += min_speed * frame_speed
+		Store.playerA.position.x += frame_speed * Store.playerA.speed_multiplier
+		Store.playerB.position.x += frame_speed * Store.playerB.speed_multiplier
+		var min_pos = min(Store.playerA.position.x,Store.playerB.position.x) 
+		
+		$Camera2D.position.x = min_pos - 200
+		$WinningEffect_tscn.position.x = min_pos + get_viewport().size.x - 100
 
 		check_and_shift_ground($Ground1, $Ground2)
 		check_and_shift_ground($Ground2, $Ground1)
@@ -70,12 +71,12 @@ func generate_obstacle(score: int, delta_x = 0):
 		generate_obstacle(score, delta_x + MIN_OBSTACLE_X_DISTANCE)
 	
 
-func add_players():
+func initialize_scene():
 	var players = [Store.playerA, Store.playerB]
 	for  i in range(0, 2):
 		var player: Player  = players[i]
 		player.scale = Vector2(5,5)
-		player.position.x = 300 + i*300
+		player.position.x = 200 + i*70
 		player.position.y = $Ground1.position.y - 140
 		get_node('.').add_child(player)
 	
@@ -101,8 +102,8 @@ func _on_game_over():
 	get_tree().change_scene_to_file("res://scenes/UI/menu/game_over.tscn")
 
 func _on_jump(position: Vector2): 
-	var jump_effect = jump_effect_scene.instantiate()
+	var jump_effect: JumpEffect = jump_effect_scene.instantiate()
 	jump_effect.position = position
-	
 	add_child(jump_effect)
+	jump_effect.finished.connect(jump_effect.queue_free)
 	
