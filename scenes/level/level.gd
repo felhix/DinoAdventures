@@ -20,7 +20,7 @@ func show_score():
 
 func _ready():
 	screen_size = get_window().size
-	add_players()
+	initialize_scene()
 	$Music.play()
 	
 	$WinningEffect_tscn.scale = Vector2(5,5)
@@ -70,7 +70,7 @@ func generate_obstacle(score: int, delta_x = 0):
 		generate_obstacle(score, delta_x + MIN_OBSTACLE_X_DISTANCE)
 	
 
-func add_players():
+func initialize_scene():
 	var players = [Store.playerA, Store.playerB]
 	for  i in range(0, 2):
 		var player: Player  = players[i]
