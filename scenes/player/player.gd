@@ -38,6 +38,10 @@ func deathAnim():
 func canPlay():
 	return "started" in get_parent()
 
+func _process(delta: float) -> void:
+	if is_blinking == true:
+		$AnimatedSprite2D.set_visible(randi_range(0,1))
+	
 func _physics_process(delta: float) -> void:
 	if canPlay() and get_parent().started:
 		if not is_on_floor():
@@ -75,3 +79,4 @@ func _on_timer_timeout() -> void:
 	print("c'est la fin")
 	is_invicible = false
 	is_blinking = false
+	$AnimatedSprite2D.set_visible(true)
