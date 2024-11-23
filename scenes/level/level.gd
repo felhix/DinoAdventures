@@ -41,8 +41,8 @@ func _process(delta: float) -> void:
 		var min_speed = min(Store.playerA.speed_multiplier,Store.playerB.speed_multiplier) 
 	
 		Store.playerA.position.x += frame_speed * Store.playerA.speed_multiplier			
-		Store.playerB.position.x += frame_speed * Store.playerA.speed_multiplier			
-			
+		Store.playerB.position.x += frame_speed * Store.playerB.speed_multiplier			
+		
 		$Camera2D.position.x += min_speed * frame_speed
 		$WinningEffect_tscn.position.x += min_speed * frame_speed
 		$FinishLine.position.x += min_speed * frame_speed
