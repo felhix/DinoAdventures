@@ -3,6 +3,8 @@ extends Node2D
 @onready var Store = get_node("/root/Store")
 
 const DEFAULT_ANIM = "idle"
+const CHANGE_OBSTACLE = 3
+const MASTER_SPEED = 1400
 
 var obstacle_scene = preload("res://scenes/objects/obstacle.tscn")
 
@@ -19,19 +21,19 @@ func _ready():
 	Store.health = 1
 
 func _process(delta: float) -> void:
+	var frame_speed = MASTER_SPEED * delta
 	if started == false and Input.is_action_just_pressed("ui_accept"):
 		started= true
 		_reset_timer()
 
 	if started:
-		var speed = 1400
-		Store.score += speed/1000.0*pow(multiplier(), 3)
+		Store.score += frame_speed/1000.0*pow(multiplier(), 3)
 		show_score()
 			
 		for  i in range(0, len(Store.players)):
-			Store.players[i].position.x += speed * delta
+			Store.players[i].position.x += frame_speed
 			
-		$Camera2D.position.x += speed * delta
+		$Camera2D.position.x += frame_speed
 
 		check_and_shift_ground($Ground1, $Ground2)
 		check_and_shift_ground($Ground2, $Ground1)
@@ -52,7 +54,7 @@ func generate_obstacle():
 	obs.scale = obs.scale*randf_range(0.9,1.1)
 	add_child(obs)
 	
-	if randi_range(0,3)==3:
+	if randi_range(0,CHANGE_OBSTACLE)==0:
 		var obs2 = obstacle_scene.instantiate()
 		obs2.position = Vector2i(obs_x+70, obs_y)
 		add_child(obs2)
