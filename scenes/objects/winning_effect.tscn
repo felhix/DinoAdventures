@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dsb66nxut1jyu"]
+[gd_scene load_steps=20 format=3 uid="uid://cs7b4wvodpg8h"]
 
 [ext_resource type="Texture2D" uid="uid://b8racrpf7iijl" path="res://assets/sprites/effects/PNG/fx2_electric_burst_large_violet/frame0000.png" id="1_g60j2"]
 [ext_resource type="Texture2D" uid="uid://b7n1g5upmjve" path="res://assets/sprites/effects/PNG/fx2_impact_shock_large_brown/frame0001.png" id="1_iuxah"]

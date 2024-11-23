@@ -37,11 +37,10 @@ func _process(delta: float) -> void:
 		Store.score += frame_speed/1000.0*pow(multiplier(), 3)
 		show_score()
 			
-		var min_speed = Store.players[0].speed_multiplier
-		for  i in range(0, len(Store.players)):
-			if Store.players[i].speed_multiplier < min_speed:
-				min_speed = Store.players[i].speed_multiplier
-			Store.players[i].position.x += frame_speed * Store.players[i].speed_multiplier			
+		var min_speed = min(Store.playerA.speed_multiplier,Store.playerB.speed_multiplier) 
+	
+		Store.playerA.position.x += frame_speed * Store.playerA.speed_multiplier			
+		Store.playerB.position.x += frame_speed * Store.playerA.speed_multiplier			
 			
 		$Camera2D.position.x += min_speed * frame_speed
 		$WinningEffect_tscn.position.x += min_speed * frame_speed
@@ -71,8 +70,9 @@ func generate_obstacle(score: int, delta_x = 0):
 	
 
 func add_players():
-	for  i in range(0, len(Store.players)):
-		var player = Store.players[i]
+	var players = [Store.playerA, Store.playerB]
+	for  i in range(0, 2):
+		var player = players[i]
 		player.scale = Vector2(5,5)
 		player.position.x = 300 + i*300
 		player.position.y = $Ground1.position.y - 140

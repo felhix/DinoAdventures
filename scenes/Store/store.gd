@@ -13,13 +13,15 @@ const BCharScenes = [
 	preload("res://scenes/player/ground_player/bunny/bunny.tscn")
 ]
 
-var players = []
+var playerA = null
+var playerB = null
 var loser = null
 var health : int = 0
 var score= 0.0 as float
 
 func reset():
-	players = []
+	playerA = null
+	playerB = null
 	score = 0
 	health = 0
 	loser = null
@@ -27,8 +29,11 @@ func reset():
 func setLoser(player):
 	loser = player
 
-func addPlayer(char, AorB):
-	var d = char.instantiate()
-	d.AorB = AorB
-	players.append(d)
+func addPlayerA(char):
+	playerA = char.instantiate()
+	playerA.AorB = 'A'
+	
+func addPlayerB(char):
+	playerB = char.instantiate()
+	playerB.AorB = 'B'
 	
