@@ -63,13 +63,6 @@ func _physics_process(delta: float) -> void:
 func take_damage():
 	set_invicible_timer()
 	speed_multiplier = 1.0
-#	speed_multiplier = speed_multiplier - ((speed_multiplier - 1)/2)
-
-func die():
-	velocity.x = 0
-	velocity.y = 0
-	emit_signal("game_over")
-	Store.setLoser(self.duplicate())
 	
 func set_invicible_timer():
 	$Timer.start()
