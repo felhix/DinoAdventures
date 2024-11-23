@@ -45,6 +45,7 @@ func _process(delta: float) -> void:
 			
 		$Camera2D.position.x += min_speed * frame_speed
 		$WinningEffect_tscn.position.x += min_speed * frame_speed
+		$FinishLine.position.x += min_speed * frame_speed
 
 		check_and_shift_ground($Ground1, $Ground2)
 		check_and_shift_ground($Ground2, $Ground1)

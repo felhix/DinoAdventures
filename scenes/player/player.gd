@@ -82,3 +82,7 @@ func _on_timer_timeout() -> void:
 	is_invicible = false
 	is_blinking = false
 	$AnimatedSprite2D.set_visible(true)
+
+func enter_finish_line():
+	emit_signal("game_over")
+	Store.setLoser(self.duplicate())
