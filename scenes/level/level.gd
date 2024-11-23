@@ -27,7 +27,7 @@ func _ready():
 	$WinningEffect_tscn.position.x = get_viewport().size.x
 	Store.health = 1
 
-func _process(delta: float) -> void:
+func _process(delta: float) -> void:	
 	var frame_speed = MASTER_SPEED * delta
 	if started == false and Input.is_action_just_pressed("ui_accept"):
 		started= true
@@ -43,8 +43,8 @@ func _process(delta: float) -> void:
 				min_speed = Store.players[i].speed_multiplier
 			Store.players[i].position.x += frame_speed * Store.players[i].speed_multiplier			
 			
-		$Camera2D.position.x += frame_speed * min_speed
-		$WinningEffect_tscn.position.x += frame_speed * min_speed
+		$Camera2D.position.x += min_speed * frame_speed
+		$WinningEffect_tscn.position.x += min_speed * frame_speed
 
 		check_and_shift_ground($Ground1, $Ground2)
 		check_and_shift_ground($Ground2, $Ground1)
@@ -62,10 +62,10 @@ func generate_obstacle(score: int):
 	var obs_y : int = $EnemySpawner.position.y
 	obs.position = Vector2i(obs_x, obs_y)
 	
-	obs.scale = obs.scale * randf_range(0.75,1.25) * maxf(1.0, score / SCALE_ON_SCORE_DIVISER)
+	obs.scale = obs.scale * randf_range(0.75,1.25)
 	add_child(obs)
 	
-	if randi_range(0,CHANGE_OBSTACLE)==0:
+	if randi_range(0,3)==3:
 		var obs2 = obstacle_scene.instantiate()
 		obs2.position = Vector2i(obs_x + maxf(MIN_OBSTACLE_X_DISTANCE, score / DISTANCE_ON_SCORE_DIVISER), obs_y)
 		add_child(obs2)
