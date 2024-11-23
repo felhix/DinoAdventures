@@ -38,14 +38,14 @@ func _process(delta: float) -> void:
 		Store.score += frame_speed/1000.0*pow(multiplier(), 3)
 		show_score()
 			
-		var min_speed = min(Store.playerA.speed_multiplier,Store.playerB.speed_multiplier) 
 	
-		Store.playerA.position.x += frame_speed * Store.playerA.speed_multiplier			
-		Store.playerB.position.x += frame_speed * Store.playerB.speed_multiplier			
+		Store.playerA.position.x += frame_speed * Store.playerA.speed_multiplier
+		Store.playerB.position.x += frame_speed * Store.playerB.speed_multiplier
+		var min_pos = min(Store.playerA.position.x,Store.playerB.position.x) 
 		
-		$Camera2D.position.x += min_speed * frame_speed
-		$WinningEffect_tscn.position.x += min_speed * frame_speed
-		$FinishLine.position.x += min_speed * frame_speed
+		$Camera2D.position.x = min_pos - 200
+		$WinningEffect_tscn.position.x = min_pos + get_viewport().size.x
+		$FinishLine.position.x += min_pos + get_viewport().size.x
 
 		check_and_shift_ground($Ground1, $Ground2)
 		check_and_shift_ground($Ground2, $Ground1)
@@ -75,7 +75,7 @@ func initialize_scene():
 	for  i in range(0, 2):
 		var player: Player  = players[i]
 		player.scale = Vector2(5,5)
-		player.position.x = 300 + i*300
+		player.position.x = 200 + i*70
 		player.position.y = $Ground1.position.y - 140
 		get_node('.').add_child(player)
 	

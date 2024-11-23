@@ -57,25 +57,25 @@ func _physics_process(delta: float) -> void:
 				jumpAnim()
 			else:
 				runAnim()
-		speed_multiplier += 0.0005
 
 	move_and_slide()
 
 func take_damage():
-	set_invicible_timer()
-	speed_multiplier = 1.0
-	
-func set_invicible_timer():
+	set_timer(true)
+
+func set_timer(slow_down):
 	$Timer.start()
-	print("début")
 	is_invicible = true
 	is_blinking = true
+	speed_multiplier = 0.9 if slow_down else 1.1
+	
 
 func _on_timer_timeout() -> void:
-	print("c'est la fin")
 	is_invicible = false
 	is_blinking = false
 	$AnimatedSprite2D.set_visible(true)
+	speed_multiplier = 1
+	
 
 func enter_finish_line():
 	emit_signal("game_over")
