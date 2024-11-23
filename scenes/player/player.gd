@@ -61,6 +61,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage():
+	set_invicible_timer()
 	speed_multiplier = 1.0
 #	speed_multiplier = speed_multiplier - ((speed_multiplier - 1)/2)
 
