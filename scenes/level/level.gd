@@ -18,6 +18,10 @@ func _ready():
 	screen_size = get_window().size
 	add_players()
 	$Music.play()
+	
+	$WinningEffect_tscn.scale = Vector2(5,5)
+	$WinningEffect_tscn.position.y = get_viewport().size.y*0.9
+	$WinningEffect_tscn.position.x = get_viewport().size.x
 	Store.health = 1
 
 func _process(delta: float) -> void:
@@ -37,6 +41,7 @@ func _process(delta: float) -> void:
 			Store.players[i].position.x += frame_speed * Store.players[i].speed_multiplier			
 			
 		$Camera2D.position.x += frame_speed * min_speed
+		$WinningEffect_tscn.position.x += frame_speed * min_speed
 
 		check_and_shift_ground($Ground1, $Ground2)
 		check_and_shift_ground($Ground2, $Ground1)
