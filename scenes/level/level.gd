@@ -48,7 +48,7 @@ func _process(delta: float) -> void:
 		Score.time_left = time_left
 
 func set_camera_position(x1, x2):
-	$Camera2D.position.x =  (x1+x2)/2  - get_viewport().size.x/2 +100
+	$Camera2D.position.x =  (x1+x2)/2  - get_viewport().size.x*2/5 
 
 func multiplier():
 	return len(str(int(STORE.score)))
