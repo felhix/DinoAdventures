@@ -60,7 +60,6 @@ func generate_obstacle(score: int, delta_x = 0):
 	
 	if randi_range(0, CHANGE_OBSTACLE)==0:
 		generate_obstacle(score, delta_x + MIN_OBSTACLE_X_DISTANCE)
-	
 
 func initialize_scene():
 	var players = [Store.playerA, Store.playerB]
