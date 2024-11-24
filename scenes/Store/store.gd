@@ -23,7 +23,7 @@ var level: int = 0;
 
 const level_to_scene = [
 	"res://scenes/level/level.tscn",
-	"res://scenes/level/level.tscn"
+	"res://scenes/level/city_dirty.tscn"
 ]
 
 func reset():
