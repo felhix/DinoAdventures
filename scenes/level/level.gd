@@ -89,7 +89,7 @@ func _reset_timer():
 
 func check_and_shift_ground(ground_to_check, other_ground):
 	var ground_width = screen_size.x * 2
-	if $Camera2D.position.x - ground_to_check.position.x > ground_width:
+	if $Camera2D.position.x - ground_to_check.position.x - screen_size.x> ground_width:
 		ground_to_check.position.x = other_ground.position.x + ground_width
 
 func _on_game_over():

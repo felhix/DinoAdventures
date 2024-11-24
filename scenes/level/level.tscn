@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d1bcyiw1jwn0f" path="res://scenes/background/background.tscn" id="4_mndoe"]
 [ext_resource type="PackedScene" uid="uid://rpj21y6sv7vx" path="res://scenes/UI/HUD/Score.tscn" id="5_h5m6e"]
 [ext_resource type="AudioStream" uid="uid://bldo0lxss2pn8" path="res://assets/sounds/game_over.mp3" id="6_bgfsl"]
-[ext_resource type="PackedScene" uid="uid://dsb66nxut1jyu" path="res://scenes/objects/winning_effect.tscn" id="7_k8y0q"]
+[ext_resource type="PackedScene" uid="uid://2qvxjqa7r1ja" path="res://scenes/objects/winning_effect.tscn" id="7_k8y0q"]
 [ext_resource type="AudioStream" uid="uid://bsk1hwqunhrqm" path="res://assets/sounds/air-parsing-ben-benjamin.mp3" id="7_ssiip"]
 [ext_resource type="PackedScene" uid="uid://b2iwpqi8ib7br" path="res://scenes/level/finish_line.tscn" id="8_xaboy"]
 
@@ -33,10 +33,10 @@ position = Vector2(5, 924)
 unique_name_in_owner = true
 
 [node name="Ground2" parent="." instance=ExtResource("2_kyehk")]
-position = Vector2(5, 1080)
+position = Vector2(-100, 1080)
 
 [node name="Ground1" parent="." instance=ExtResource("2_kyehk")]
-position = Vector2(3845, 1080)
+position = Vector2(3745, 1080)
 
 [node name="GameOver" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_bgfsl")
