@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_xy6pn"]
 [ext_resource type="PackedScene" uid="uid://cggo0a50wjukr" path="res://scenes/player/flying_player/BirdSpawner.tscn" id="2_4xbv3"]
 [ext_resource type="PackedScene" uid="uid://cpdjf5eta3h4h" path="res://scenes/objects/ground.tscn" id="2_kyehk"]
-[ext_resource type="PackedScene" uid="uid://d1bcyiw1jwn0f" path="res://scenes/background/background.tscn" id="4_mndoe"]
+[ext_resource type="PackedScene" uid="uid://d1bcyiw1jwn0f" path="res://scenes/background/jungle_background.tscn" id="4_mndoe"]
 [ext_resource type="PackedScene" uid="uid://rpj21y6sv7vx" path="res://scenes/UI/HUD/Score.tscn" id="5_h5m6e"]
 [ext_resource type="PackedScene" uid="uid://2qvxjqa7r1ja" path="res://scenes/objects/winning_effect.tscn" id="7_k8y0q"]
 [ext_resource type="AudioStream" uid="uid://bsk1hwqunhrqm" path="res://assets/sounds/air-parsing-ben-benjamin.mp3" id="7_ssiip"]
