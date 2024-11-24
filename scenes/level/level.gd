@@ -8,7 +8,7 @@ const DEFAULT_ANIM = "idle"
 const CHANGE_OBSTACLE = 3
 const MASTER_SPEED = 1400
 const MIN_OBSTACLE_X_DISTANCE = 150
-const LEVEL_TIME_LEFT = 3_000
+const LEVEL_TIME_LEFT = 30_000
 
 const obstacle_scene: Resource = preload("res://scenes/objects/obstacle.tscn")
 const jump_effect_scene: Resource = preload("res://scenes/objects/jump_effect.tscn")
@@ -28,7 +28,6 @@ func _ready():
 	screen_size = get_window().size
 	initialize_scene()
 	$Music.play()
-	
 	time_left = LEVEL_TIME_LEFT
 	
 func _process(delta: float) -> void:
