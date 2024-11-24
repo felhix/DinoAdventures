@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 	var ms = str(int(time_left % 1000)/10)
 	var fucking_zero = '0' if len(ms) == 1 else ''
 	TimeLeftValueLabel.text = s+':'+fucking_zero+ms
-	DistanceValueLabel.text = str(int(Store.score))
+	DistanceValueLabel.text = str(int(Store.score/100))+'m'

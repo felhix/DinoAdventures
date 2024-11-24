@@ -3,7 +3,7 @@ extends Node
 const CAPTIONS = [
 	"You are so slow",
 	"Try harder next time.",
-	"Nice try, you little friend.",
+	"Nice try, little friend.",
 	"Good one.",
 	"Ok, you rock."
 ]
@@ -13,7 +13,7 @@ func caption():
 
 func _ready():
 	$"player died".text = "Oh no, you loose  (x_x)"
-	$score.text = str(int(Store.score))+ " points. "+caption()
+	$score.text = str(int(Store.score))+ "m. "+caption()
 	
 	var players = [Store.instantiatePlayerA(), Store.instantiatePlayerB()]
 	for  i in range(0, 2):

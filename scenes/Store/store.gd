@@ -30,6 +30,7 @@ func reset():
 	playerA = null
 	playerB = null
 	level = 0
+	score=0
 	
 func set_score():
 	score= min(playerA.position.x, playerB.position.x)
