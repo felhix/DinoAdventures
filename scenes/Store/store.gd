@@ -28,8 +28,9 @@ func set_score():
 	
 func instantiatePlayerA():
 	return ACharScenes[playerAIdx].instantiate()
+
 func instantiatePlayerB():
-	return ACharScenes[playerBIdx].instantiate()
+	return BCharScenes[playerBIdx].instantiate()
 
 func addPlayerA(idx):
 	playerAIdx = idx

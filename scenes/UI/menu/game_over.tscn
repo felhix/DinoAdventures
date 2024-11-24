@@ -45,7 +45,7 @@ theme_override_constants/shadow_offset_x = 12
 theme_override_constants/shadow_offset_y = 7
 theme_override_fonts/font = ExtResource("1_31mdg")
 theme_override_font_sizes/font_size = 138
-text = "YOU WIN"
+text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
