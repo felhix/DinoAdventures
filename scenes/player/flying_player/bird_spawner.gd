@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	if Store.score <= 1:
 		return
 
-	if randi_range(0, 100) == 0:
+	if randi_range(0, 1_000) < 5:
 		add_child(create_pigeon())
 
 	for bird in get_children():  

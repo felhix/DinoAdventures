@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 const JUMP_VELOCITY = -3000.0
 signal game_over()
+signal game_won()
 signal jump(position: Vector2)
 
 var AorB = "A"
@@ -79,8 +80,7 @@ func _on_timer_timeout() -> void:
 	
 
 func enter_finish_line():
-	game_over.emit()
-	Store.setLoser(self.duplicate())
+	game_won.emit()
 
 func get_speed_multiplier():
 	if self.is_invicible and self.is_blinking:

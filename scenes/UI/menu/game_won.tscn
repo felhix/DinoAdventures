@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqsl03r2lq7sn"]
+
+[ext_resource type="Script" path="res://scenes/UI/menu/game_won.gd" id="1_6wh4i"]
+[ext_resource type="Theme" uid="uid://buw4n2gkus1jy" path="res://themes/title.tres" id="1_gthxq"]
+[ext_resource type="FontFile" uid="uid://8a0to4uorpp2" path="res://assets/font/SuperPixel-m2L8j.ttf" id="2_qi4uq"]
+[ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="3_wxymv"]
+
+[node name="GameWon" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6wh4i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0.141176, 0.196078, 1)
+
+[node name="empty" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 972.0
+offset_top = 594.0
+offset_right = 1012.0
+offset_bottom = 634.0
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -958.0
+offset_right = 959.0
+offset_bottom = 322.0
+grow_horizontal = 2
+theme = ExtResource("1_gthxq")
+theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_shadow_color = Color(0.458824, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("2_qi4uq")
+theme_override_font_sizes/font_size = 138
+text = "YOU WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="player died" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -543.0
+offset_top = -812.0
+offset_right = 546.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_outline_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wxymv")
+theme_override_font_sizes/font_size = 33
+text = "Congratulations. "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -544.0
+offset_top = -272.0
+offset_right = 545.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_outline_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wxymv")
+theme_override_font_sizes/font_size = 33
+text = "PRESS \"X\" TO GO BACK TO MAIN MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -954.0
+offset_top = -370.0
+offset_right = 957.0
+offset_bottom = -254.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_outline_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wxymv")
+theme_override_font_sizes/font_size = 46
+text = "Will you do better next time ?"
+horizontal_alignment = 1
+vertical_alignment = 1
