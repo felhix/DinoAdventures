@@ -110,7 +110,7 @@ func _on_game_won():
 	started = false
 	
 	if STORE.level < len(Store.level_to_scene) - 1:
-		get_tree().change_scene_to_file("res://scenes/UI/menu/next_level.tscn")
+		get_tree().change_scene_to_file("res://scenes/UI/menu/shop.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/UI/menu/game_won.tscn")
 
