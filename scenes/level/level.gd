@@ -69,9 +69,9 @@ func spawn_recursive(x):
 	
 	var additionnal_ennemies_count =  int((3*x+end)/end)
 	for i in randi_range(0,additionnal_ennemies_count):
-		add_ennemy(x+i*500+300*randf())
+		add_ennemy(x+i*150+100*randf())
 
-	var next_x = x+ (2 * end /(x+end) * 900) + 400*randf_range(0.5,1.0)*randi_range(-1.0,1.0)
+	var next_x = x+ (2.5 * end /(x+end) * 900) + 200*randf_range(0.5,1.0)*randi_range(-1.0,1.0)
 	spawn_recursive(next_x)
 	
 
