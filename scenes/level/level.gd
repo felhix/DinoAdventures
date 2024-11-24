@@ -3,9 +3,10 @@ class_name Level extends Node2D
 @onready var STORE: Store = get_node("/root/Store")
 @onready var BackDayNightColor: CanvasModulate = $Background/BackDayNightColor
 @onready var BackDayNightColorGround: CanvasModulate = $Ground1/BackDayNightColor2
+@onready var FinishFlag = $FinishLine
+
 
 const DEFAULT_ANIM = "idle"
-const CHANGE_OBSTACLE = 3
 const MASTER_SPEED = 1400
 const MIN_OBSTACLE_X_DISTANCE = 150
 const LEVEL_TIME_LEFT = 35_000
@@ -23,6 +24,7 @@ func show_score():
 	var ms = str(int(int(time_left) % 1000)/10)
 	var fucking_zero = '0' if len(ms) == 1 else ''
 	$Ui.get_child(3).text = s+':'+fucking_zero+ms
+	$Ui.get_child(1).text = str(int(Store.score))
 
 func _ready():
 	screen_size = get_window().size
@@ -42,7 +44,6 @@ func _process(delta: float) -> void:
 	var frame_speed = MASTER_SPEED * delta
 	if started == false and Input.is_action_just_pressed("ui_accept"):
 		started= true
-		_reset_timer()
 
 	if started:
 		show_score()
@@ -63,18 +64,32 @@ func set_camera_position(x1, x2):
 func multiplier():
 	return len(str(int(STORE.score)))
 
-func generate_obstacle(score: int, delta_x = 0):
+func spawn_all_ennemies():
+	spawn_recursive($Camera2D.position.x + 200+int(100*randf()))
+	
+func spawn_recursive(x):
+	var end = FinishFlag.position.x
+	
+	if(x > end):
+		return
+	
+	add_ennemy(x)
+	
+	var additionnal_ennemies_count =  int((3*x+end)/end)
+	for i in randi_range(0,additionnal_ennemies_count):
+		add_ennemy(x+i*500+300*randf())
+
+	var next_x = x+ (2 * end /(x+end) * 900) + 400*randf_range(0.5,1.0)*randi_range(-1.0,1.0)
+	spawn_recursive(next_x)
+	
+
+func add_ennemy(x):	
 	var obs = obstacle_scene.instantiate()
 	add_child(obs)
-	
 	obs.scale = obs.scale * randf_range(1, 1.25)
-	
-	var obs_x : int = delta_x + screen_size.x + $Camera2D.position.x + (obs.width * obs.scale.x) * 2
+	var obs_x : int = x + screen_size.x + $Camera2D.position.x + (obs.width * obs.scale.x) * 2
 	var obs_y : int = $EnemySpawner.position.y
 	obs.position = Vector2i(obs_x, obs_y)
-	
-	if randi_range(0, CHANGE_OBSTACLE)==0:
-		generate_obstacle(score, delta_x + MIN_OBSTACLE_X_DISTANCE)
 
 func initialize_scene():
 	STORE.addPlayerA(STORE.playerAIdx)
@@ -92,15 +107,7 @@ func initialize_scene():
 		player.jump.connect(_on_jump)
 		
 	set_camera_position(Store.playerA.position.x, Store.playerB.position.x)
-
-func _on_timer_timeout() -> void:
-	generate_obstacle(STORE.score)
-	_reset_timer()
-
-func _reset_timer():
-	$Timer.stop()
-	$Timer.wait_time = 1.3*(10.0/(multiplier()*2.0+10.0))*randf_range(1.01,1.1)
-	$Timer.start()
+	spawn_all_ennemies()
 
 func _on_game_over():
 	started = false

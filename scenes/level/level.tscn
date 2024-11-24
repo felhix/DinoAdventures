@@ -19,9 +19,6 @@ anchor_mode = 0
 [node name="BirdSpawner" parent="Camera2D" instance=ExtResource("2_4xbv3")]
 position = Vector2(2025, 400)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-
 [node name="Background" parent="." instance=ExtResource("4_mndoe")]
 offset = Vector2(0, -119)
 scale = Vector2(6.9, 6.9)
@@ -78,5 +75,3 @@ position = Vector2(-3745, -1080)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ssiip")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
