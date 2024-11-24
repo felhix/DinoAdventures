@@ -29,11 +29,11 @@ func reset():
 func setLoser(player):
 	loser = player
 
-func addPlayerA(char):
-	playerA = char.instantiate()
+func addPlayerA(ressource):
+	playerA = ressource.instantiate()
 	playerA.AorB = 'A'
 	
-func addPlayerB(char):
-	playerB = char.instantiate()
+func addPlayerB(ressource):
+	playerB = ressource.instantiate()
 	playerB.AorB = 'B'
 	

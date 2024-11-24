@@ -70,6 +70,7 @@ func initialize_scene():
 	var players = [Store.playerA, Store.playerB]
 	for  i in range(0, 2):
 		var player: Player  = players[i]
+		if player == null: continue
 		player.scale = Vector2(5,5)
 		player.position.x = 200 + i*70
 		player.position.y = $Ground1.position.y - 140
