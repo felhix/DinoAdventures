@@ -1,11 +1,14 @@
 class_name Level extends Node2D
 
 @onready var Store: Store = get_node("/root/Store")
+@onready var FrontDayNightColor: CanvasModulate = $FrontDayNightColor
+@onready var BackDayNightColor: CanvasModulate = $Background/BackDayNightColor
 
 const DEFAULT_ANIM = "idle"
 const CHANGE_OBSTACLE = 3
 const MASTER_SPEED = 1400
 const MIN_OBSTACLE_X_DISTANCE = 150
+const LEVEL_TIME_LEFT = 3_000
 
 const obstacle_scene: Resource = preload("res://scenes/objects/obstacle.tscn")
 const jump_effect_scene: Resource = preload("res://scenes/objects/jump_effect.tscn")
@@ -26,11 +29,13 @@ func _ready():
 	initialize_scene()
 	$Music.play()
 	
-	time_left = 3_000
+	time_left = LEVEL_TIME_LEFT
 	
 func _process(delta: float) -> void:
 	if(started == true):
 		time_left -=delta*1000
+		BackDayNightColor.color = Color("#000").lerp(Color("#FFF"), time_left / LEVEL_TIME_LEFT)
+		FrontDayNightColor.color = Color("#000").lerp(Color("#FFF"), time_left / LEVEL_TIME_LEFT)
 	
 	if time_left < 0:
 		_on_game_over()
