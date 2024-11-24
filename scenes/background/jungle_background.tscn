@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1bcyiw1jwn0f"]
 
-[ext_resource type="Texture2D" uid="uid://dki73lgw46lh8" path="res://assets/sprites/backgrounds/Jungle/1.Backround.png" id="1_xlq7y"]
-[ext_resource type="Texture2D" uid="uid://jd3p7ybfjtdu" path="res://assets/sprites/backgrounds/Jungle/2.Trees_back.png" id="2_dfx5d"]
-[ext_resource type="Texture2D" uid="uid://bfcji1ocgmdv0" path="res://assets/sprites/backgrounds/Jungle/3.Trees_front.png" id="3_ihwfl"]
+[ext_resource type="Texture2D" uid="uid://dki73lgw46lh8" path="res://assets/sprites/backgrounds/Jungle/1.Backround.png" id="1_0jku1"]
+[ext_resource type="Texture2D" uid="uid://jd3p7ybfjtdu" path="res://assets/sprites/backgrounds/Jungle/2.Trees_back.png" id="2_lbuwo"]
+[ext_resource type="Texture2D" uid="uid://bfcji1ocgmdv0" path="res://assets/sprites/backgrounds/Jungle/3.Trees_front.png" id="3_lp6g3"]
 
-[node name="Background" type="ParallaxBackground"]
+[node name="JungleBackground" type="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xlq7y")
+texture = ExtResource("1_0jku1")
 centered = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
@@ -15,7 +15,7 @@ motion_scale = Vector2(0.1, 1)
 motion_mirroring = Vector2(320, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-texture = ExtResource("2_dfx5d")
+texture = ExtResource("2_lbuwo")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
@@ -23,7 +23,7 @@ motion_scale = Vector2(0.125, 1)
 motion_mirroring = Vector2(320, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
-texture = ExtResource("3_ihwfl")
+texture = ExtResource("3_lp6g3")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
