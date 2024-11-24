@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://do4aobnrgaass"]
+
+[ext_resource type="Texture2D" uid="uid://5axb04ix7jns" path="res://assets/sprites/backgrounds/City_Dirty/1.Sky.png" id="1_2dc37"]
+[ext_resource type="Texture2D" uid="uid://dnkns44jb8203" path="res://assets/sprites/backgrounds/City_Dirty/2.Buildings.png" id="2_h3wgp"]
+[ext_resource type="Texture2D" uid="uid://cehwec7l6mqxr" path="res://assets/sprites/backgrounds/City_Dirty/3.Wall.png" id="3_h18y3"]
+[ext_resource type="Texture2D" uid="uid://b0dgrdnfd2lyl" path="res://assets/sprites/backgrounds/City_Dirty/4.Sidewalk.png" id="4_1l2r7"]
+
+[node name="CityDirtyBackground" type="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2dc37")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("2_h3wgp")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.125, 1)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("3_h18y3")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.16, 1)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+visible = false
+position = Vector2(161, 91)
+texture = ExtResource("4_1l2r7")

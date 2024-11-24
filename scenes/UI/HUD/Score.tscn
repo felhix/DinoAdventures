@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://rpj21y6sv7vx"]
+[gd_scene load_steps=3 format=3 uid="uid://rpj21y6sv7vx"]
 
 [ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="1_a3gib"]
+[ext_resource type="Script" path="res://scenes/UI/HUD/score.gd" id="1_eymnr"]
 
-[node name="Ui" type="CanvasLayer"]
+[node name="ScoreUI" type="CanvasLayer"]
+script = ExtResource("1_eymnr")
 
-[node name="Score" type="Label" parent="."]
+[node name="Distance" type="Label" parent="."]
 texture_filter = 1
 offset_left = 16.0
 offset_top = 16.0
@@ -16,7 +18,7 @@ theme_override_font_sizes/font_size = 23
 text = "DISTANCE:"
 vertical_alignment = 1
 
-[node name="Score3" type="Label" parent="."]
+[node name="DistanceValueLabel" type="Label" parent="."]
 texture_filter = 1
 offset_left = 504.0
 offset_top = 16.0
@@ -42,7 +44,7 @@ theme_override_font_sizes/font_size = 23
 text = "TIME LEFT:"
 vertical_alignment = 1
 
-[node name="ScoreTime" type="Label" parent="."]
+[node name="TimeLeftValueLabel" type="Label" parent="."]
 texture_filter = 1
 offset_left = 504.0
 offset_top = 72.0

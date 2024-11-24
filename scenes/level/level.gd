@@ -4,7 +4,8 @@ class_name Level extends Node2D
 @onready var BackDayNightColor: CanvasModulate = $Background/BackDayNightColor
 @onready var BackDayNightColorGround: CanvasModulate = $Ground1/BackDayNightColor2
 @onready var FinishFlag = $FinishLine
-
+@onready var Score: ScoreUI = $Ui
+@onready var player_fx: PlayerFx = $PlayerFx
 
 const DEFAULT_ANIM = "idle"
 const MASTER_SPEED = 1400
@@ -12,19 +13,10 @@ const MIN_OBSTACLE_X_DISTANCE = 150
 const LEVEL_TIME_LEFT = 35_000
 
 const obstacle_scene: Resource = preload("res://scenes/objects/obstacle.tscn")
-const jump_effect_scene: Resource = preload("res://scenes/objects/jump_effect.tscn")
 
 var screen_size : Vector2i
 var started = false
 var time_left = 0
-
-func show_score():
-	var time_str = int(time_left) / 1000
-	var s =str(int(time_left) / 1000)
-	var ms = str(int(int(time_left) % 1000)/10)
-	var fucking_zero = '0' if len(ms) == 1 else ''
-	$Ui.get_child(3).text = s+':'+fucking_zero+ms
-	$Ui.get_child(1).text = str(int(Store.score))
 
 func _ready():
 	screen_size = get_window().size
@@ -46,14 +38,14 @@ func _process(delta: float) -> void:
 		started= true
 
 	if started:
-		show_score()
+		Score.time_left = time_left
 		STORE.playerA.position.x += frame_speed * STORE.playerA.get_speed_multiplier()
 		STORE.playerB.position.x += frame_speed * STORE.playerB.get_speed_multiplier()
 		set_camera_position(STORE.playerA.position.x,STORE.playerB.position.x)
 		STORE.set_score()
 
 	else:
-		show_score()
+		Score.time_left = time_left
 
 func set_camera_position(x1, x2):
 	var min_pos = min(x1,x2) 
@@ -117,14 +109,10 @@ func _on_game_won():
 	started = false
 	
 	if STORE.level < len(Store.level_to_scene) - 1:
-		get_tree().change_scene_to_file("res://scenes/UI/menu/next_level.tscn")
+		get_tree().change_scene_to_file("res://scenes/UI/menu/shop.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/UI/menu/game_won.tscn")
 
 
 func _on_jump(position: Vector2): 
-	var jump_effect: JumpEffect = jump_effect_scene.instantiate()
-	jump_effect.position = position
-	add_child(jump_effect)
-	jump_effect.finished.connect(jump_effect.queue_free)
-	
+	player_fx.create_jump_fx(position)
