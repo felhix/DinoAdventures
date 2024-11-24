@@ -79,7 +79,7 @@ func _on_timer_timeout() -> void:
 	
 
 func enter_finish_line():
-	emit_signal("game_over")
+	game_over.emit()
 	Store.setLoser(self.duplicate())
 
 func get_speed_multiplier():
