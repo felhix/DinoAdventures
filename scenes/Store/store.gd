@@ -15,7 +15,6 @@ const BCharScenes = [
 
 var playerA: Player = null
 var playerB: Player = null
-var loser = null
 var health : int = 0
 var score= 0.0 as float
 
@@ -24,10 +23,6 @@ func reset():
 	playerB = null
 	score = 0
 	health = 0
-	loser = null
-	
-func setLoser(player):
-	loser = player
 
 func addPlayerA(ressource):
 	playerA = ressource.instantiate()

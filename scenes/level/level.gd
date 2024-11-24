@@ -28,7 +28,7 @@ func _ready():
 	initialize_scene()
 	$Music.play()
 	
-	time_left = 18_000
+	time_left = 3_000
 	Store.health = 1
 	
 func _process(delta: float) -> void:
@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 		time_left -=delta*1000
 	
 	if time_left < 0:
-		Store.playerA.game_over.emit()
+		_on_game_over()
 	
 	var frame_speed = MASTER_SPEED * delta
 	if started == false and Input.is_action_just_pressed("ui_accept"):
