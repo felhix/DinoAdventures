@@ -36,8 +36,8 @@ func _process(delta: float) -> void:
 		show_score()
 			
 	
-		Store.playerA.position.x += frame_speed * Store.playerA.speed_multiplier
-		Store.playerB.position.x += frame_speed * Store.playerB.speed_multiplier
+		Store.playerA.position.x += frame_speed * Store.playerA.get_speed_multiplier()
+		Store.playerB.position.x += frame_speed * Store.playerB.get_speed_multiplier()
 		var min_pos = min(Store.playerA.position.x,Store.playerB.position.x) 
 		
 		$Camera2D.position.x = min_pos - 200

@@ -7,7 +7,7 @@ signal jump(position: Vector2)
 var AorB = "A"
 var is_blinking : bool = false
 var is_invicible : bool = false
-var speed_multiplier : float = 1.0
+var is_jumping : bool = false
 
 func jump_key():
 	return 'jump_player_'+ AorB
@@ -50,13 +50,16 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 			velocity += get_gravity()*10 * delta
 			jumpAnim()
+			is_jumping = true
 		else: 
 			if canPlay() and canJump() and Input.is_action_just_pressed(jump_key()):
 				velocity.y = JUMP_VELOCITY
 				jump.emit(self.position)
 				jumpAnim()
+				is_jumping = true
 			else:
 				runAnim()
+				is_jumping = false
 
 	move_and_slide()
 
@@ -67,16 +70,22 @@ func set_timer(slow_down):
 	$Timer.start()
 	is_invicible = true
 	is_blinking = true
-	speed_multiplier = 0.85 if slow_down else 1.1
 	
 
 func _on_timer_timeout() -> void:
 	is_invicible = false
 	is_blinking = false
 	$AnimatedSprite2D.set_visible(true)
-	speed_multiplier = 1
 	
 
 func enter_finish_line():
 	emit_signal("game_over")
 	Store.setLoser(self.duplicate())
+
+func get_speed_multiplier():
+	if self.is_invicible and self.is_blinking:
+		return 0.85
+	elif self.is_jumping:
+		return 0.92
+	else:
+		return 1.0
