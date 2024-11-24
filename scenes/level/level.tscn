@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1osbnqgl3ygt"]
+[gd_scene load_steps=9 format=3 uid="uid://c1osbnqgl3ygt"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_xy6pn"]
-[ext_resource type="PackedScene" uid="uid://cggo0a50wjukr" path="res://scenes/player/flying_player/BirdSpawner.tscn" id="2_4xbv3"]
+[ext_resource type="PackedScene" path="res://scenes/player/flying_player/BirdSpawner.tscn" id="2_4xbv3"]
 [ext_resource type="PackedScene" uid="uid://cpdjf5eta3h4h" path="res://scenes/objects/ground.tscn" id="2_kyehk"]
 [ext_resource type="PackedScene" uid="uid://d1bcyiw1jwn0f" path="res://scenes/background/jungle_background.tscn" id="4_mndoe"]
 [ext_resource type="PackedScene" uid="uid://rpj21y6sv7vx" path="res://scenes/UI/HUD/Score.tscn" id="5_h5m6e"]
-[ext_resource type="PackedScene" uid="uid://2qvxjqa7r1ja" path="res://scenes/objects/winning_effect.tscn" id="7_k8y0q"]
 [ext_resource type="AudioStream" uid="uid://bsk1hwqunhrqm" path="res://assets/sounds/air-parsing-ben-benjamin.mp3" id="7_ssiip"]
 [ext_resource type="PackedScene" uid="uid://b2iwpqi8ib7br" path="res://scenes/level/finish_line.tscn" id="8_xaboy"]
 [ext_resource type="PackedScene" uid="uid://cric8i204debm" path="res://scenes/objects/PlayerFx.tscn" id="9_p4lr6"]
@@ -31,9 +30,6 @@ transform = Transform2D(6.9, 0, 0, 6.9, 0, -119)
 
 [node name="EnemySpawner" type="Marker2D" parent="."]
 position = Vector2(5, 924)
-
-[node name="WinningEffect_tscn" parent="." instance=ExtResource("7_k8y0q")]
-unique_name_in_owner = true
 
 [node name="FinishLine" parent="." instance=ExtResource("8_xaboy")]
 position = Vector2(40000, 1153)
@@ -78,5 +74,3 @@ position = Vector2(-3745, -1080)
 stream = ExtResource("7_ssiip")
 
 [node name="PlayerFx" parent="." instance=ExtResource("9_p4lr6")]
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
