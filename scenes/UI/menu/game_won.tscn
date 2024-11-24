@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqsl03r2lq7sn"]
+[gd_scene load_steps=5 format=3 uid="uid://57g8oihw7625"]
 
 [ext_resource type="Script" path="res://scenes/UI/menu/game_won.gd" id="1_6wh4i"]
 [ext_resource type="Theme" uid="uid://buw4n2gkus1jy" path="res://themes/title.tres" id="1_gthxq"]
@@ -18,7 +18,7 @@ script = ExtResource("1_6wh4i")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0.141176, 0.196078, 1)
+color = Color(1, 0.772549, 0.47451, 1)
 
 [node name="empty" type="Control" parent="."]
 layout_mode = 3
@@ -39,8 +39,8 @@ offset_right = 959.0
 offset_bottom = 322.0
 grow_horizontal = 2
 theme = ExtResource("1_gthxq")
-theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
-theme_override_colors/font_shadow_color = Color(0.458824, 0, 0, 1)
+theme_override_colors/font_color = Color(0.458824, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.141176, 0.196078, 1)
 theme_override_constants/shadow_offset_x = 12
 theme_override_constants/shadow_offset_y = 7
 theme_override_fonts/font = ExtResource("2_qi4uq")
@@ -62,8 +62,8 @@ offset_right = 546.0
 offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
-theme_override_colors/font_outline_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_color = Color(0, 0.141176, 0.196078, 1)
+theme_override_colors/font_outline_color = Color(0, 0.141176, 0.196078, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_wxymv")
 theme_override_font_sizes/font_size = 33
@@ -83,8 +83,8 @@ offset_top = -272.0
 offset_right = 545.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
-theme_override_colors/font_outline_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_color = Color(0, 0.141176, 0.196078, 1)
+theme_override_colors/font_outline_color = Color(0, 0.141176, 0.196078, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_wxymv")
 theme_override_font_sizes/font_size = 33
@@ -105,8 +105,8 @@ offset_right = 957.0
 offset_bottom = -254.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
-theme_override_colors/font_outline_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_color = Color(0, 0.141176, 0.196078, 1)
+theme_override_colors/font_outline_color = Color(0, 0.141176, 0.196078, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_wxymv")
 theme_override_font_sizes/font_size = 46
