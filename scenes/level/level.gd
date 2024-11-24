@@ -2,6 +2,7 @@ class_name Level extends Node2D
 
 @onready var Store: Store = get_node("/root/Store")
 @onready var BackDayNightColor: CanvasModulate = $Background/BackDayNightColor
+@onready var BackDayNightColorGround: CanvasModulate = $Ground1/BackDayNightColor2
 
 const DEFAULT_ANIM = "idle"
 const CHANGE_OBSTACLE = 3
@@ -32,7 +33,8 @@ func _ready():
 func _process(delta: float) -> void:
 	if(started == true):
 		time_left -=delta*1000
-		BackDayNightColor.color = Color("#002432").lerp(Color("#FFF"), time_left / LEVEL_TIME_LEFT)
+		BackDayNightColor.color = Color("#00246e").lerp(Color("#FFF"), time_left / LEVEL_TIME_LEFT)
+		BackDayNightColorGround.color = Color("#86d4ff").lerp(Color("#FFF"), time_left / LEVEL_TIME_LEFT)
 
 	if time_left < 0:
 		_on_game_over()
@@ -46,14 +48,18 @@ func _process(delta: float) -> void:
 		show_score()
 		Store.playerA.position.x += frame_speed * Store.playerA.get_speed_multiplier()
 		Store.playerB.position.x += frame_speed * Store.playerB.get_speed_multiplier()
-		var min_pos = min(Store.playerA.position.x,Store.playerB.position.x) 
-		
-		$Camera2D.position.x = min_pos - 200
+		set_camera_position(Store.playerA.position.x,Store.playerB.position.x)
 		Store.set_score()
 
 	else:
 		show_score()
-		
+
+func set_camera_position(x1, x2):
+	var min_pos = min(x1,x2) 
+	var max_pos = max(x2,x2) 
+	
+	$Camera2D.position.x = min_pos - (max_pos-min_pos)/2 - 200
+
 func multiplier():
 	return len(str(int(Store.score)))
 
@@ -82,6 +88,8 @@ func initialize_scene():
 	
 		player.game_won.connect(_on_game_won)
 		player.jump.connect(_on_jump)
+		
+	set_camera_position(Store.playerA.position.x, Store.playerB.position.x)
 
 func _on_timer_timeout() -> void:
 	generate_obstacle(Store.score)
