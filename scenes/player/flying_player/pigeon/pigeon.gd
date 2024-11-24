@@ -4,4 +4,4 @@ const MIN_SPEED = 500
 
 func _process(delta: float) -> void:
 	position.x -= delta * MIN_SPEED * scale.x
-	position.y = cos(position.x) 
+	position.y += randi_range(-2, 2) + cos(position.x)
