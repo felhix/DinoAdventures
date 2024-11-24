@@ -48,10 +48,7 @@ func _process(delta: float) -> void:
 		Score.time_left = time_left
 
 func set_camera_position(x1, x2):
-	var min_pos = min(x1,x2) 
-	var max_pos = max(x2,x2) 
-	
-	$Camera2D.position.x = min_pos - (max_pos-min_pos)/2 - 200
+	$Camera2D.position.x =  (x1+x2)/2  - get_viewport().size.x/2
 
 func multiplier():
 	return len(str(int(STORE.score)))
@@ -91,7 +88,7 @@ func initialize_scene():
 		var player: Player  = players[i]
 		if player == null: continue
 		player.scale = Vector2(5,5)
-		player.position.x = 200 + i*70
+		player.position.x = get_viewport().size.x/2 +200 + i*70
 		player.position.y = $Ground1.position.y - 140
 		get_node('.').add_child(player)
 	
