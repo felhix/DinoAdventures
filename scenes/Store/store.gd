@@ -13,8 +13,8 @@ const BCharScenes = [
 	preload("res://scenes/player/ground_player/bunny/bunny.tscn")
 ]
 
-var playerA = null
-var playerB = null
+var playerA: Player = null
+var playerB: Player = null
 var loser = null
 var health : int = 0
 var score= 0.0 as float
