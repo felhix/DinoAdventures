@@ -4,6 +4,7 @@ class_name Level extends Node2D
 @onready var BackDayNightColor: CanvasModulate = $Background/BackDayNightColor
 @onready var BackDayNightColorGround: CanvasModulate = $Ground1/BackDayNightColor2
 @onready var Score: ScoreUI = $Ui
+@onready var player_fx: PlayerFx = $PlayerFx
 
 const DEFAULT_ANIM = "idle"
 const CHANGE_OBSTACLE = 3
@@ -12,7 +13,6 @@ const MIN_OBSTACLE_X_DISTANCE = 150
 const LEVEL_TIME_LEFT = 35_000
 
 const obstacle_scene: Resource = preload("res://scenes/objects/obstacle.tscn")
-const jump_effect_scene: Resource = preload("res://scenes/objects/jump_effect.tscn")
 
 var screen_size : Vector2i
 var started = false
@@ -110,8 +110,4 @@ func _on_game_won():
 
 
 func _on_jump(position: Vector2): 
-	var jump_effect: JumpEffect = jump_effect_scene.instantiate()
-	jump_effect.position = position
-	add_child(jump_effect)
-	jump_effect.finished.connect(jump_effect.queue_free)
-	
+	player_fx.create_jump_fx(position)
