@@ -14,18 +14,26 @@ const jump_effect_scene: Resource = preload("res://scenes/objects/jump_effect.ts
 
 var screen_size : Vector2i
 var started = false
+var time_left = 0
 
 func show_score():
-	$Ui.get_child(0).text = "SCORE: "+str(int(Store.score))
+	var time_str = str(time_left).split('.')
+	$Ui.get_child(3).text = str(time_str[0]+ ':'+time_str[1].left(2))
 
 func _ready():
 	screen_size = get_window().size
 	initialize_scene()
 	$Music.play()
-		
+	
+	time_left = 30
 	Store.health = 1
-
-func _process(delta: float) -> void:	
+	
+func _process(delta: float) -> void:
+	time_left -=delta
+	
+	if time_left == 0:
+		emit_signal("game_over")
+	
 	var frame_speed = MASTER_SPEED * delta
 	if started == false and Input.is_action_just_pressed("ui_accept"):
 		started= true

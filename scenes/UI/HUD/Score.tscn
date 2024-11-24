@@ -18,9 +18,9 @@ vertical_alignment = 1
 
 [node name="Score3" type="Label" parent="."]
 texture_filter = 1
-offset_left = 368.0
+offset_left = 504.0
 offset_top = 16.0
-offset_right = 506.0
+offset_right = 642.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("1_a3gib")
@@ -44,9 +44,9 @@ vertical_alignment = 1
 
 [node name="ScoreTime" type="Label" parent="."]
 texture_filter = 1
-offset_left = 368.0
+offset_left = 504.0
 offset_top = 72.0
-offset_right = 506.0
+offset_right = 642.0
 offset_bottom = 96.0
 scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("1_a3gib")
