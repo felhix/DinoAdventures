@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://13jknouytv3e"]
+
+[ext_resource type="PackedScene" uid="uid://cggo0a50wjukr" path="res://scenes/player/flying_player/BirdSpawner.tscn" id="1_p0qte"]
+
+[node name="EntityLevel" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5, 0)
+anchor_mode = 0
+
+[node name="BirdSpawner" parent="Camera2D" instance=ExtResource("1_p0qte")]
+position = Vector2(2025, 400)
