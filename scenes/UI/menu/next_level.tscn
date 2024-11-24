@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbjfyajg5p53l"]
+
+[ext_resource type="Theme" uid="uid://buw4n2gkus1jy" path="res://themes/title.tres" id="1_5xs5p"]
+[ext_resource type="Script" path="res://scenes/UI/menu/next_level.gd" id="1_58tnm"]
+[ext_resource type="FontFile" uid="uid://8a0to4uorpp2" path="res://assets/font/SuperPixel-m2L8j.ttf" id="2_gsxsq"]
+[ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="3_rloj5"]
+
+[node name="NextLevel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_58tnm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0.141176, 0.196078, 1)
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 1917.0
+offset_bottom = 322.0
+grow_horizontal = 2
+theme = ExtResource("1_5xs5p")
+theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_shadow_color = Color(0.458824, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("2_gsxsq")
+theme_override_font_sizes/font_size = 138
+text = "YOU DID IT !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 436.0
+offset_top = 808.0
+offset_right = 1525.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_outline_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_rloj5")
+theme_override_font_sizes/font_size = 33
+text = "PRESS \"X\" TO GO ON"
+horizontal_alignment = 1
+vertical_alignment = 1

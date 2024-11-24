@@ -1,6 +1,6 @@
 class_name Level extends Node2D
 
-@onready var Store: Store = get_node("/root/Store")
+@onready var STORE: Store = get_node("/root/Store")
 @onready var BackDayNightColor: CanvasModulate = $Background/BackDayNightColor
 @onready var BackDayNightColorGround: CanvasModulate = $Ground1/BackDayNightColor2
 
@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 		BackDayNightColorGround.color = Color("#86d4ff").lerp(Color("#FFF"), time_left / LEVEL_TIME_LEFT)
 
 	if time_left < 0:
-		_on_game_over()
+		call_deferred("_on_game_over")
 	
 	var frame_speed = MASTER_SPEED * delta
 	if started == false and Input.is_action_just_pressed("ui_accept"):
@@ -46,10 +46,10 @@ func _process(delta: float) -> void:
 
 	if started:
 		show_score()
-		Store.playerA.position.x += frame_speed * Store.playerA.get_speed_multiplier()
-		Store.playerB.position.x += frame_speed * Store.playerB.get_speed_multiplier()
-		set_camera_position(Store.playerA.position.x,Store.playerB.position.x)
-		Store.set_score()
+		STORE.playerA.position.x += frame_speed * STORE.playerA.get_speed_multiplier()
+		STORE.playerB.position.x += frame_speed * STORE.playerB.get_speed_multiplier()
+		set_camera_position(STORE.playerA.position.x,STORE.playerB.position.x)
+		STORE.set_score()
 
 	else:
 		show_score()
@@ -61,7 +61,7 @@ func set_camera_position(x1, x2):
 	$Camera2D.position.x = min_pos - (max_pos-min_pos)/2 - 200
 
 func multiplier():
-	return len(str(int(Store.score)))
+	return len(str(int(STORE.score)))
 
 func generate_obstacle(score: int, delta_x = 0):
 	var obs = obstacle_scene.instantiate()
@@ -77,7 +77,9 @@ func generate_obstacle(score: int, delta_x = 0):
 		generate_obstacle(score, delta_x + MIN_OBSTACLE_X_DISTANCE)
 
 func initialize_scene():
-	var players = [Store.playerA, Store.playerB]
+	STORE.addPlayerA(STORE.playerAIdx)
+	STORE.addPlayerB(STORE.playerBIdx)
+	var players = [STORE.playerA, STORE.playerB]
 	for  i in range(0, 2):
 		var player: Player  = players[i]
 		if player == null: continue
@@ -92,7 +94,7 @@ func initialize_scene():
 	set_camera_position(Store.playerA.position.x, Store.playerB.position.x)
 
 func _on_timer_timeout() -> void:
-	generate_obstacle(Store.score)
+	generate_obstacle(STORE.score)
 	_reset_timer()
 
 func _reset_timer():
@@ -106,7 +108,11 @@ func _on_game_over():
 
 func _on_game_won():
 	started = false
-	get_tree().change_scene_to_file("res://scenes/UI/menu/game_won.tscn")
+	
+	if STORE.level < len(Store.level_to_scene) - 1:
+		get_tree().change_scene_to_file("res://scenes/UI/menu/next_level.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/UI/menu/game_won.tscn")
 
 
 func _on_jump(position: Vector2): 

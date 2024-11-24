@@ -4,7 +4,7 @@ extends Node
 @onready var labelPlayerB = get_node('PlayerB2')
 @onready var selectionPlayerA = get_node('SelectA')
 @onready var selectionPlayerB = get_node('SelectB')
-@onready var Store = get_node("/root/Store")
+@onready var STORE: Store = get_node("/root/Store")
 
 const OFFSET_LEFT = 700
 const OFFSET_TOP = 80
@@ -14,17 +14,17 @@ var selectedPlayerA = 0
 var selectedPlayerB = 0
 
 func _ready():	
-	loadChars(Store.ACharScenes, labelPlayerA)
-	loadChars(Store.BCharScenes, labelPlayerB)
+	loadChars(STORE.ACharScenes, labelPlayerA)
+	loadChars(STORE.BCharScenes, labelPlayerB)
 	
 	moveSelection(labelPlayerA,selectionPlayerA, selectedPlayerA)
 	moveSelection(labelPlayerB,selectionPlayerB, selectedPlayerB)
 
 func _input(event):
 	if event.is_action_pressed("Start"):
-		Store.addPlayerA(selectedPlayerA)
-		Store.addPlayerB(selectedPlayerB)
-		get_tree().change_scene_to_file("res://scenes/level/level.tscn")
+		STORE.playerAIdx = selectedPlayerA
+		STORE.playerBIdx = selectedPlayerB
+		get_tree().change_scene_to_file(STORE.level_to_scene[STORE.level])
 	
 	# select player A
 	if event.is_action_pressed("next_player_A"):
@@ -47,11 +47,11 @@ func getIndex(i, length):
 		return i % length
 
 func popPlayerA(i:int):
-	selectedPlayerA = getIndex(selectedPlayerA+i, len(Store.ACharScenes))
+	selectedPlayerA = getIndex(selectedPlayerA+i, len(STORE.ACharScenes))
 	moveSelection(labelPlayerA,selectionPlayerA, selectedPlayerA)
 
 func popPlayerB(i:int):
-	selectedPlayerB = getIndex(selectedPlayerB+i, len(Store.BCharScenes))
+	selectedPlayerB = getIndex(selectedPlayerB+i, len(STORE.BCharScenes))
 	moveSelection(labelPlayerB, selectionPlayerB, selectedPlayerB)
 	
 func moveSelection(anchor, selection, i):

@@ -19,10 +19,17 @@ var playerB: Player = null
 var playerBIdx = 0
 var score = 0;
 var money : int = 0 
+var level: int = 0;
+
+const level_to_scene = [
+	"res://scenes/level/level.tscn",
+	"res://scenes/level/level.tscn"
+]
 
 func reset():
 	playerA = null
 	playerB = null
+	level = 0
 	
 func set_score():
 	score= min(playerA.position.x, playerB.position.x)
