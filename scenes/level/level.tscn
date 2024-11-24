@@ -36,6 +36,9 @@ position = Vector2(5, 924)
 [node name="WinningEffect_tscn" parent="." instance=ExtResource("7_k8y0q")]
 unique_name_in_owner = true
 
+[node name="FinishLine" parent="." instance=ExtResource("8_xaboy")]
+position = Vector2(1764, 579)
+
 [node name="Ground2" parent="." instance=ExtResource("2_kyehk")]
 position = Vector2(-100, 1080)
 
@@ -47,8 +50,5 @@ stream = ExtResource("6_bgfsl")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ssiip")
-
-[node name="FinishLine" parent="." instance=ExtResource("8_xaboy")]
-position = Vector2(1822, 579)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
