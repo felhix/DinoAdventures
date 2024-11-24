@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf3shraj571ej"]
+[gd_scene load_steps=9 format=3 uid="uid://bf3shraj571ej"]
 
 [ext_resource type="Script" path="res://scenes/UI/menu/shop.gd" id="1_8y05i"]
 [ext_resource type="Theme" uid="uid://buw4n2gkus1jy" path="res://themes/title.tres" id="2_hpbtp"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="5_odyuj"]
 [ext_resource type="PackedScene" uid="uid://c5hcrfaf6y5uq" path="res://scenes/UI/select/select.tscn" id="6_7jt51"]
 [ext_resource type="AudioStream" uid="uid://btm61bvsb6kho" path="res://assets/sounds/EricSkiff-Prologue.mp3" id="7_x1dqs"]
+[ext_resource type="PackedScene" uid="uid://csj48c6b5u8lf" path="res://scenes/objects/coin.tscn" id="8_es0tb"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -92,3 +93,11 @@ offset_bottom = 411.0
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_x1dqs")
 autoplay = true
+
+[node name="Coin" parent="." instance=ExtResource("8_es0tb")]
+position = Vector2(664, 120)
+scale = Vector2(8, 8)
+
+[node name="Coin2" parent="." instance=ExtResource("8_es0tb")]
+position = Vector2(1272, 120)
+scale = Vector2(8, 8)
