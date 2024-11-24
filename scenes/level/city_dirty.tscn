@@ -10,6 +10,7 @@ size = Vector2(3840, 156)
 [node name="CityDirty" node_paths=PackedStringArray("BackDayNightColor", "GroundDayNightColor") instance=ExtResource("1_tlpwi")]
 BackDayNightColor = NodePath("Ground/GroundDayNightColor")
 GroundDayNightColor = NodePath("Ground/GroundDayNightColor")
+LEVEL_TIME_LEFT = 30000
 
 [node name="Camera2D" parent="." index="0"]
 visible = false

@@ -3,6 +3,7 @@ class_name Level extends Node2D
 @onready var STORE: Store = get_node("/root/Store")
 @onready var BackDayNightColor: CanvasModulate = $Background/BackDayNightColor
 @onready var BackDayNightColorGround: CanvasModulate = $Ground1/BackDayNightColor2
+@onready var Score: ScoreUI = $Ui
 
 const DEFAULT_ANIM = "idle"
 const CHANGE_OBSTACLE = 3
@@ -22,7 +23,7 @@ func show_score():
 	var s =str(int(time_left) / 1000)
 	var ms = str(int(int(time_left) % 1000)/10)
 	var fucking_zero = '0' if len(ms) == 1 else ''
-	$Ui.get_child(3).text = s+':'+fucking_zero+ms
+	Score.TimeLeftValueLabel.text = s+':'+fucking_zero+ms
 
 func _ready():
 	screen_size = get_window().size
