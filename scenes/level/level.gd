@@ -41,11 +41,7 @@ func _process(delta: float) -> void:
 		var min_pos = min(Store.playerA.position.x,Store.playerB.position.x) 
 		
 		$Camera2D.position.x = min_pos - 200
-		$FinishLine.position.x = min_pos + get_viewport().size.x - 350
 
-		check_and_shift_ground($Ground1, $Ground2)
-		check_and_shift_ground($Ground2, $Ground1)
- 
 	else:
 		show_score()
 		
@@ -87,11 +83,6 @@ func _reset_timer():
 	$Timer.stop()
 	$Timer.wait_time = 1.3*(10.0/(multiplier()*2.0+10.0))*randf_range(1.01,1.1)
 	$Timer.start()
-
-func check_and_shift_ground(ground_to_check, other_ground):
-	var ground_width = screen_size.x * 2
-	if $Camera2D.position.x - ground_to_check.position.x - screen_size.x> ground_width:
-		ground_to_check.position.x = other_ground.position.x + ground_width
 
 func _on_game_over():
 	started = false

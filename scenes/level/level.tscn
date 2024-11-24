@@ -37,13 +37,40 @@ position = Vector2(5, 924)
 unique_name_in_owner = true
 
 [node name="FinishLine" parent="." instance=ExtResource("8_xaboy")]
-position = Vector2(1764, 579)
+position = Vector2(40000, 1153)
 
 [node name="Ground2" parent="." instance=ExtResource("2_kyehk")]
 position = Vector2(-100, 1080)
 
 [node name="Ground1" parent="." instance=ExtResource("2_kyehk")]
 position = Vector2(3745, 1080)
+
+[node name="Ground1" parent="Ground1" instance=ExtResource("2_kyehk")]
+position = Vector2(3840, 0)
+
+[node name="Ground1" parent="Ground1/Ground1" instance=ExtResource("2_kyehk")]
+position = Vector2(3840, 0)
+
+[node name="Ground1" parent="Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
+position = Vector2(3840, 0)
+
+[node name="Ground1" parent="Ground1/Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
+position = Vector2(3840, 0)
+
+[node name="Ground1" parent="Ground1/Ground1/Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
+position = Vector2(3840, 0)
+
+[node name="Ground1" parent="Ground1/Ground1/Ground1/Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
+position = Vector2(3840, 0)
+
+[node name="Ground1" parent="Ground1/Ground1/Ground1/Ground1/Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
+position = Vector2(3840, 0)
+
+[node name="Ground1" parent="Ground1/Ground1/Ground1/Ground1/Ground1/Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
+position = Vector2(3840, 0)
+
+[node name="Ground1" parent="Ground1/Ground1/Ground1/Ground1/Ground1/Ground1/Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
+position = Vector2(3840, 0)
 
 [node name="GameOver" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_bgfsl")
