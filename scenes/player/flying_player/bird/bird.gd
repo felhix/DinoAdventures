@@ -1,1 +1,1 @@
-extends FlyingPlayer
+class_name Birsd extends FlyingPlayer
