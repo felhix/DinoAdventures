@@ -22,8 +22,6 @@ position = Vector2(2025, 400)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="FrontDayNightColor" type="CanvasModulate" parent="."]
-
 [node name="Background" parent="." instance=ExtResource("4_mndoe")]
 offset = Vector2(0, -119)
 scale = Vector2(6.9, 6.9)

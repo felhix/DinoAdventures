@@ -1,7 +1,6 @@
 class_name Level extends Node2D
 
 @onready var Store: Store = get_node("/root/Store")
-@onready var FrontDayNightColor: CanvasModulate = $FrontDayNightColor
 @onready var BackDayNightColor: CanvasModulate = $Background/BackDayNightColor
 
 const DEFAULT_ANIM = "idle"
@@ -33,9 +32,8 @@ func _ready():
 func _process(delta: float) -> void:
 	if(started == true):
 		time_left -=delta*1000
-		BackDayNightColor.color = Color("#000").lerp(Color("#FFF"), time_left / LEVEL_TIME_LEFT)
-		FrontDayNightColor.color = Color("#000").lerp(Color("#FFF"), time_left / LEVEL_TIME_LEFT)
-	
+		BackDayNightColor.color = Color("#002432").lerp(Color("#FFF"), time_left / LEVEL_TIME_LEFT)
+
 	if time_left < 0:
 		_on_game_over()
 	
