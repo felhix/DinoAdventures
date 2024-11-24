@@ -18,7 +18,7 @@ position = Vector2(5, 0)
 anchor_mode = 0
 
 [node name="BirdSpawner" parent="Camera2D" instance=ExtResource("2_4xbv3")]
-position = Vector2(2025, 272)
+position = Vector2(2025, 400)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
