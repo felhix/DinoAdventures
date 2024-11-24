@@ -79,6 +79,7 @@ func initialize_scene():
 		get_node('.').add_child(player)
 	
 		player.game_over.connect(_on_game_over)
+		player.game_won.connect(_on_game_won)
 		player.jump.connect(_on_jump)
 
 func _on_timer_timeout() -> void:
@@ -93,6 +94,11 @@ func _reset_timer():
 func _on_game_over():
 	started = false
 	get_tree().change_scene_to_file("res://scenes/UI/menu/game_over.tscn")
+
+func _on_game_won():
+	started = false
+	get_tree().change_scene_to_file("res://scenes/UI/menu/game_won.tscn")
+
 
 func _on_jump(position: Vector2): 
 	var jump_effect: JumpEffect = jump_effect_scene.instantiate()
