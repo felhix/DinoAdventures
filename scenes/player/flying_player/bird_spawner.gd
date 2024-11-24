@@ -14,10 +14,9 @@ func _process(delta: float) -> void:
 
 	for bird in get_children():  
 		if bird is FlyingPlayer:
-			print(bird.position.x + position.x)
 			if bird.position.x + position.x < 0:
 				bird.call_deferred("queue_free")
-	
+
 ### 
 
 func create_pigeon() -> Pigeon:
