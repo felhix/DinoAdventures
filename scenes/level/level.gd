@@ -17,22 +17,26 @@ var started = false
 var time_left = 0
 
 func show_score():
-	var time_str = str(time_left).split('.')
-	$Ui.get_child(3).text = str(time_str[0]+ ':'+time_str[1].left(2))
+	var time_str = int(time_left) / 1000
+	var s =str(int(time_left) / 1000)
+	var ms = str(int(int(time_left) % 1000)/10)
+	var fucking_zero = '0' if len(ms) == 1 else ''
+	$Ui.get_child(3).text = s+':'+fucking_zero+ms
 
 func _ready():
 	screen_size = get_window().size
 	initialize_scene()
 	$Music.play()
 	
-	time_left = 30
+	time_left = 18_000
 	Store.health = 1
 	
 func _process(delta: float) -> void:
-	time_left -=delta
+	if(started == true):
+		time_left -=delta*1000
 	
-	if time_left == 0:
-		emit_signal("game_over")
+	if time_left < 0:
+		Store.playerA.game_over.emit()
 	
 	var frame_speed = MASTER_SPEED * delta
 	if started == false and Input.is_action_just_pressed("ui_accept"):
