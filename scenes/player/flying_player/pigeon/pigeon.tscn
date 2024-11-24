@@ -105,5 +105,3 @@ sprite_frames = SubResource("SpriteFrames_sffh6")
 animation = &"run"
 autoplay = "run"
 frame_progress = 0.217358
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
