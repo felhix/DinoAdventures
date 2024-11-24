@@ -1,7 +1,6 @@
 class_name Player extends CharacterBody2D
 
 const JUMP_VELOCITY = -3000.0
-signal game_over()
 signal game_won()
 signal jump(position: Vector2)
 

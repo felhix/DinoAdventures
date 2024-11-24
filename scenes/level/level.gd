@@ -78,7 +78,6 @@ func initialize_scene():
 		player.position.y = $Ground1.position.y - 140
 		get_node('.').add_child(player)
 	
-		player.game_over.connect(_on_game_over)
 		player.game_won.connect(_on_game_won)
 		player.jump.connect(_on_jump)
 
