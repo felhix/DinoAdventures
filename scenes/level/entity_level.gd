@@ -4,6 +4,8 @@ class_name EntityLevel extends Node2D
 @export var ground_day_night_color: CanvasModulate
 @export var level_time_left: int
 @onready var player_fx: PlayerFx = $PlayerFx
+@onready var won_timer: Timer = $WonTimer
+@onready var finish_line: Node2D = $FinishLine
 
 @onready var store: Store = get_node("/root/Store")
 @onready var score_ui: ScoreUI = $ScoreUi
@@ -12,6 +14,7 @@ class_name EntityLevel extends Node2D
 const MASTER_SPEED = 1400
 
 var started: bool = false
+var finished: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,11 +25,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var frame_speed = MASTER_SPEED * delta
-	if(started == true):
+	if started == true:
 		time_left -= delta*1000
 		back_day_night_color.color = Color("#00246e").lerp(Color("#FFF"), time_left / level_time_left)
 		ground_day_night_color.color = Color("#86d4ff").lerp(Color("#FFF"), time_left / level_time_left)
 		score_ui.time_left = time_left
+		
+	if finished == true || started == true:
 		store.playerA.position.x += frame_speed * store.playerA.get_speed_multiplier()
 		store.playerB.position.x += frame_speed * store.playerB.get_speed_multiplier()
 
@@ -44,11 +49,17 @@ func _on_game_over():
 
 func _on_game_won():
 	started = false
-	
-	if store.level < len(store.level_to_scene) - 1:
-		get_tree().change_scene_to_file("res://scenes/UI/menu/shop.tscn")
-	else:
-		get_tree().change_scene_to_file("res://scenes/UI/menu/game_won.tscn")
+	finished = true
+	set_camera_position(finish_line.position.x, 500)
+	var tree: SceneTree = get_tree()
+	won_timer.timeout.connect(
+		func _on_timeout():
+			if store.level < len(store.level_to_scene) - 1:
+				tree.change_scene_to_file("res://scenes/UI/menu/shop.tscn")
+			else:
+				tree.change_scene_to_file("res://scenes/UI/menu/game_won.tscn")
+	)
+	won_timer.start()
 
 ###
 
@@ -74,5 +85,5 @@ func initialize_scene():
 		
 	set_camera_position(store.playerA.position.x, store.playerB.position.x)
 
-func set_camera_position(x1, x2):
+func set_camera_position(x1: int, x2: int):
 	$Camera2D.position.x =  (x1+x2)/2  - get_viewport().size.x/2 +100
