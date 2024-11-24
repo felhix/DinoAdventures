@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://26dsrlpkhc02" path="res://assets/objects/flag foot.png" id="4_lfttx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r423k"]
-size = Vector2(150, 1262)
+size = Vector2(154, 1262)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_paoky"]
 atlas = ExtResource("3_dxy26")
@@ -69,24 +69,24 @@ animations = [{
 script = ExtResource("1_3dsw1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_r423k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(38, -319)
-scale = Vector2(3, 3)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_bv3mq")
 autoplay = "default"
 frame_progress = 0.729014
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-41, -119.25)
-scale = Vector2(3, 13.0484)
+position = Vector2(-68, 2.2057)
+scale = Vector2(4, 22.5029)
 texture = ExtResource("3_ff0ue")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-41, 84)
-scale = Vector2(3, 3)
+position = Vector2(-68, 355)
+scale = Vector2(4, 4)
 texture = ExtResource("4_lfttx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
