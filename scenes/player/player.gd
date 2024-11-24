@@ -82,8 +82,8 @@ func enter_finish_line():
 
 func get_speed_multiplier():
 	if self.is_invicible and self.is_blinking:
-		return 0.85
+		return 0.80
 	elif self.is_jumping:
-		return 0.92
+		return 0.90
 	else:
 		return 1.0

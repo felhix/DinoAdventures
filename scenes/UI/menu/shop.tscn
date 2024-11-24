@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf3shraj571ej"]
+
+[ext_resource type="Script" path="res://scenes/UI/menu/shop.gd" id="1_8y05i"]
+[ext_resource type="Theme" uid="uid://buw4n2gkus1jy" path="res://themes/title.tres" id="2_hpbtp"]
+[ext_resource type="FontFile" uid="uid://8a0to4uorpp2" path="res://assets/font/SuperPixel-m2L8j.ttf" id="3_kgnx7"]
+[ext_resource type="Theme" uid="uid://cfv88bx22voa8" path="res://themes/text.tres" id="4_yvq56"]
+[ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="5_odyuj"]
+[ext_resource type="PackedScene" uid="uid://c5hcrfaf6y5uq" path="res://scenes/UI/select/select.tscn" id="6_7jt51"]
+[ext_resource type="AudioStream" uid="uid://btm61bvsb6kho" path="res://assets/sounds/EricSkiff-Prologue.mp3" id="7_x1dqs"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8y05i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1932.0
+offset_bottom = 1099.0
+color = Color(0, 0.141176, 0.196078, 1)
+
+[node name="Title" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -596.0
+offset_top = -2.0
+offset_right = 597.0
+offset_bottom = 243.0
+grow_horizontal = 2
+theme = ExtResource("2_hpbtp")
+theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_shadow_color = Color(0.458824, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("3_kgnx7")
+theme_override_font_sizes/font_size = 103
+text = "SHOP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerA2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 378.0
+offset_right = 470.0
+offset_bottom = 413.0
+scale = Vector2(2, 2)
+theme = ExtResource("4_yvq56")
+theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_fonts/font = ExtResource("5_odyuj")
+text = "SELECT PLAYER A: 
+(left/right)"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -349.0
+offset_top = -161.0
+offset_right = 349.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_yvq56")
+theme_override_colors/font_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_colors/font_outline_color = Color(1, 0.772549, 0.47451, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_odyuj")
+theme_override_font_sizes/font_size = 33
+text = "PRESS \"X\" TO CONTINUE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectA" parent="." instance=ExtResource("6_7jt51")]
+offset_left = 762.0
+offset_top = 411.0
+offset_right = 762.0
+offset_bottom = 411.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_x1dqs")
+autoplay = true

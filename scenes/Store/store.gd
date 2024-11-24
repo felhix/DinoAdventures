@@ -18,6 +18,7 @@ var playerAIdx = 0
 var playerB: Player = null
 var playerBIdx = 0
 var score = 0;
+var money : int = 0 
 
 func reset():
 	playerA = null
