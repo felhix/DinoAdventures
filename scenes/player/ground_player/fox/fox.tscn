@@ -138,6 +138,8 @@ size = Vector2(25, 16)
 [node name="Fox" instance=ExtResource("1_q244c")]
 script = ExtResource("1_u71tt")
 
+[node name="Timer" type="Timer" parent="." index="0"]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
 visibility_layer = 7
 texture_filter = 1
@@ -150,3 +152,5 @@ autoplay = "run"
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_ma3qd")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

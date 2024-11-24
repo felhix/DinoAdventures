@@ -65,15 +65,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage():
-	set_timer(true)
+	set_invicible_timer(true)
 
-func set_timer(slow_down):
-	$Timer.start()
+func set_invicible_timer(slow_down):
+	$InvincibleTimer.start()
 	is_invicible = true
 	is_blinking = true
 	
-
-func _on_timer_timeout() -> void:
+func _on_invincible_timer_timeout() -> void:
 	is_invicible = false
 	is_blinking = false
 	$AnimatedSprite2D.set_visible(true)

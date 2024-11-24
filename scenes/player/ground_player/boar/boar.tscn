@@ -138,6 +138,8 @@ size = Vector2(25, 16)
 [node name="Boar" instance=ExtResource("1_q244c")]
 script = ExtResource("1_usnwc")
 
+[node name="Timer" type="Timer" parent="." index="0"]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
 texture_filter = 1
 position = Vector2(0, -28)
@@ -149,3 +151,5 @@ autoplay = "run"
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
 position = Vector2(1.5, -13)
 shape = SubResource("RectangleShape2D_3myq1")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
