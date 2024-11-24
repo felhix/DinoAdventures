@@ -18,13 +18,6 @@ var screen_size : Vector2i
 var started = false
 var time_left = 0
 
-func show_score():
-	var time_str = int(time_left) / 1000
-	var s =str(int(time_left) / 1000)
-	var ms = str(int(int(time_left) % 1000)/10)
-	var fucking_zero = '0' if len(ms) == 1 else ''
-	Score.TimeLeftValueLabel.text = s+':'+fucking_zero+ms
-
 func _ready():
 	screen_size = get_window().size
 	initialize_scene()
@@ -46,14 +39,14 @@ func _process(delta: float) -> void:
 		_reset_timer()
 
 	if started:
-		show_score()
+		Score.time_left = time_left
 		STORE.playerA.position.x += frame_speed * STORE.playerA.get_speed_multiplier()
 		STORE.playerB.position.x += frame_speed * STORE.playerB.get_speed_multiplier()
 		set_camera_position(STORE.playerA.position.x,STORE.playerB.position.x)
 		STORE.set_score()
 
 	else:
-		show_score()
+		Score.time_left = time_left
 
 func set_camera_position(x1, x2):
 	var min_pos = min(x1,x2) 
