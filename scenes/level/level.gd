@@ -1,6 +1,6 @@
 class_name Level extends Node2D
 
-@onready var Store = get_node("/root/Store")
+@onready var Store: Store = get_node("/root/Store")
 
 const DEFAULT_ANIM = "idle"
 const CHANGE_OBSTACLE = 3
@@ -42,8 +42,7 @@ func _process(delta: float) -> void:
 	if started:
 		Store.score += frame_speed/1000.0*pow(multiplier(), 3)
 		show_score()
-			
-	
+		
 		Store.playerA.position.x += frame_speed * Store.playerA.get_speed_multiplier()
 		Store.playerB.position.x += frame_speed * Store.playerB.get_speed_multiplier()
 		var min_pos = min(Store.playerA.position.x,Store.playerB.position.x) 
