@@ -6,8 +6,6 @@ const DEFAULT_ANIM = "idle"
 const CHANGE_OBSTACLE = 3
 const MASTER_SPEED = 1400
 const MIN_OBSTACLE_X_DISTANCE = 150
-const SCALE_ON_SCORE_DIVISER = 1_000
-const DISTANCE_ON_SCORE_DIVISER = 1_000
 
 const obstacle_scene: Resource = preload("res://scenes/objects/obstacle.tscn")
 const jump_effect_scene: Resource = preload("res://scenes/objects/jump_effect.tscn")
@@ -29,7 +27,6 @@ func _ready():
 	$Music.play()
 	
 	time_left = 3_000
-	Store.health = 1
 	
 func _process(delta: float) -> void:
 	if(started == true):
@@ -44,14 +41,13 @@ func _process(delta: float) -> void:
 		_reset_timer()
 
 	if started:
-		Store.score += frame_speed/1000.0*pow(multiplier(), 3)
 		show_score()
-		
 		Store.playerA.position.x += frame_speed * Store.playerA.get_speed_multiplier()
 		Store.playerB.position.x += frame_speed * Store.playerB.get_speed_multiplier()
 		var min_pos = min(Store.playerA.position.x,Store.playerB.position.x) 
 		
 		$Camera2D.position.x = min_pos - 200
+		Store.set_score()
 
 	else:
 		show_score()

@@ -22,8 +22,8 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("Start"):
-		Store.addPlayerA(Store.ACharScenes[selectedPlayerA])
-		Store.addPlayerB(Store.BCharScenes[selectedPlayerB])
+		Store.addPlayerA(selectedPlayerA)
+		Store.addPlayerB(selectedPlayerB)
 		get_tree().change_scene_to_file("res://scenes/level/level.tscn")
 	
 	# select player A

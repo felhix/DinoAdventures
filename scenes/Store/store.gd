@@ -14,21 +14,30 @@ const BCharScenes = [
 ]
 
 var playerA: Player = null
+var playerAIdx = 0
 var playerB: Player = null
-var health : int = 0
-var score= 0.0 as float
+var playerBIdx = 0
+var score = 0;
 
 func reset():
 	playerA = null
 	playerB = null
-	score = 0
-	health = 0
+	
+func set_score():
+	score= min(playerA.position.x, playerB.position.x)
+	
+func instantiatePlayerA():
+	return ACharScenes[playerAIdx].instantiate()
+func instantiatePlayerB():
+	return ACharScenes[playerBIdx].instantiate()
 
-func addPlayerA(ressource):
-	playerA = ressource.instantiate()
+func addPlayerA(idx):
+	playerAIdx = idx
+	playerA = instantiatePlayerA()
 	playerA.AorB = 'A'
 	
-func addPlayerB(ressource):
-	playerB = ressource.instantiate()
+func addPlayerB(idx):
+	playerBIdx = idx
+	playerB = instantiatePlayerB()
 	playerB.AorB = 'B'
 	

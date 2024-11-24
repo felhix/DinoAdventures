@@ -15,7 +15,7 @@ func _ready():
 	$"player died".text = "Oh no, you loose  (x_x)"
 	$score.text = str(int(Store.score))+ " points. "+caption()
 	
-	var players = [Store.playerA, Store.playerB]
+	var players = [Store.instatiatePlayerA(), Store.instatiatePlayerB()]
 	for  i in range(0, 2):
 		var player: Player  = players[i]
 		
