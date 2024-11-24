@@ -20,15 +20,15 @@ transform = Transform2D(6.9, 0, 0, 6.9, 0, -119)
 [node name="BackDayNightColor" type="CanvasModulate" parent="CityDirtyBackground" index="4"]
 
 [node name="Ground" parent="." index="3"]
-position = Vector2(0, 800)
+position = Vector2(0, 950)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground" index="0"]
-position = Vector2(0, -303)
+position = Vector2(0, -453)
 scale = Vector2(6.9, 6.9)
 texture = ExtResource("3_tht1v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" index="1"]
-position = Vector2(0, 200)
+position = Vector2(0, 50)
 shape = SubResource("RectangleShape2D_7siia")
 
 [node name="GroundDayNightColor" type="CanvasModulate" parent="Ground" index="2"]
