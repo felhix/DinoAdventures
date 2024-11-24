@@ -9,6 +9,8 @@ class_name EntityLevel extends Node2D
 @onready var score_ui: ScoreUI = $ScoreUi
 @onready var time_left = level_time_left
 
+const MASTER_SPEED = 1400
+
 var started: bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -19,11 +21,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var frame_speed = MASTER_SPEED * delta
 	if(started == true):
 		time_left -= delta*1000
 		back_day_night_color.color = Color("#00246e").lerp(Color("#FFF"), time_left / level_time_left)
 		ground_day_night_color.color = Color("#86d4ff").lerp(Color("#FFF"), time_left / level_time_left)
 		score_ui.time_left = time_left
+		store.playerA.position.x += frame_speed * store.playerA.get_speed_multiplier()
+		store.playerB.position.x += frame_speed * store.playerB.get_speed_multiplier()
 
 	if started == false and Input.is_action_just_pressed("ui_accept"):
 		started= true
@@ -67,4 +72,7 @@ func initialize_scene():
 		player.game_won.connect(_on_game_won)
 		player.jump.connect(_on_jump)
 		
-	# set_camera_position(Store.playerA.position.x, Store.playerB.position.x)
+	set_camera_position(store.playerA.position.x, store.playerB.position.x)
+
+func set_camera_position(x1, x2):
+	$Camera2D.position.x =  (x1+x2)/2  - get_viewport().size.x/2 +100
