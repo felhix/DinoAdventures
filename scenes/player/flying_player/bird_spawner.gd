@@ -1,14 +1,13 @@
 class_name BirdSpawner extends Node2D
 
+@onready var Store: Store = get_node("/root/Store")
+
 const PIGEON_RESOURCE: Resource = preload("res://scenes/player/flying_player/pigeon/pigeon.tscn")
 
-
-func _ready() -> void:
-	var pigeon = create_pigeon()
-	add_child(pigeon)
-
-
 func _process(delta: float) -> void:
+	if Store.score <= 1:
+		return
+
 	if randi_range(0, 100) == 0:
 		add_child(create_pigeon())
 
