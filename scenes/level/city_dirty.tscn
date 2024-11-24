@@ -33,3 +33,6 @@ shape = SubResource("RectangleShape2D_7siia")
 
 [node name="GroundDayNightColor" type="CanvasModulate" parent="Ground" index="2"]
 position = Vector2(0, -800)
+
+[node name="FinishLine" parent="." index="5"]
+position = Vector2(900, 1153)
