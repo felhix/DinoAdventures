@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="1_a3gib"]
 
-[node name="Ui" type="CanvasLayer"]
+[node name="ScoreUI" type="CanvasLayer"]
 
 [node name="Score" type="Label" parent="."]
 texture_filter = 1
