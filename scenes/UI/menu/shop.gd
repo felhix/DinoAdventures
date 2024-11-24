@@ -1,12 +1,8 @@
 extends Control
 
+@onready var store: Store = get_node("/root/Store")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _input(event):
 	if event.is_action_pressed("Start"):
-		get_tree().change_scene_to_file("res://scenes/UI/menu/menu.tscn")
+		store.level += 1
+		get_tree().change_scene_to_file(store.level_to_scene[store.level])
