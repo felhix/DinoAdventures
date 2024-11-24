@@ -1,5 +1,4 @@
-extends Player
-class_name FlyingPlayer
+class_name FlyingPlayer extends Player
 
 func canFly() -> bool:
 	return true

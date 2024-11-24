@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://bct5r0b27kkdd"]
 
-[ext_resource type="Script" path="res://scenes/player/ground_player/bear/bear.gd" id="1_ilwm4"]
+[ext_resource type="Script" path="res://scenes/player/ground_player/adult_deer/adult_deer.gd" id="1_ilwm4"]
 [ext_resource type="PackedScene" uid="uid://bng716thstjhk" path="res://scenes/player/ground_player/ground_player.tscn" id="1_q244c"]
 [ext_resource type="Texture2D" uid="uid://c4tn8w6v84mfj" path="res://assets/sprites/animals/Outline/MiniDeer2.png" id="2_brmeb"]
 [ext_resource type="Texture2D" uid="uid://d6xtu7r5b6gv" path="res://assets/sprites/animals/Outline/MiniDeer1.png" id="2_omdwb"]
@@ -138,9 +138,6 @@ size = Vector2(25, 16)
 
 [node name="Deer" instance=ExtResource("1_q244c")]
 script = ExtResource("1_ilwm4")
-
-[node name="Timer" parent="." index="0"]
-wait_time = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
 texture_filter = 1

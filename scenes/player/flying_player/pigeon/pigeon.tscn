@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dc2tn34p34dm4"]
 
-[ext_resource type="Script" path="res://scenes/player/ground_player/bear/bear.gd" id="1_smum0"]
+[ext_resource type="Script" path="res://scenes/objects/flying/pigeon/pigeon.gd" id="1_smum0"]
 [ext_resource type="Texture2D" uid="uid://cw6s5v5ykb5rs" path="res://assets/sprites/street_animals/8 Bird 2/Idle.png" id="2_i5qqt"]
 [ext_resource type="Texture2D" uid="uid://v7c2hr1dw35i" path="res://assets/sprites/street_animals/8 Bird 2/Walk.png" id="3_e8hsg"]
 

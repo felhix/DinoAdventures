@@ -1,8 +1,11 @@
 [gd_scene load_steps=23 format=3 uid="uid://ckqftuvdhv33h"]
 
-[ext_resource type="Script" path="res://scenes/player/ground_player/bear/bear.gd" id="1_oxoen"]
 [ext_resource type="PackedScene" uid="uid://bng716thstjhk" path="res://scenes/player/ground_player/ground_player.tscn" id="1_q244c"]
 [ext_resource type="Texture2D" uid="uid://bxivk1v8a7a54" path="res://assets/sprites/animals/Outline/MiniBear.png" id="2_i0dnu"]
+
+[sub_resource type="GDScript" id="GDScript_24iw3"]
+script/source = "class_name Bear extends GroundPlayer
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3euaq"]
 atlas = ExtResource("2_i0dnu")
@@ -150,10 +153,7 @@ animations = [{
 size = Vector2(25, 16)
 
 [node name="Bear" instance=ExtResource("1_q244c")]
-script = ExtResource("1_oxoen")
-
-[node name="Timer" parent="." index="0"]
-wait_time = 1.0
+script = SubResource("GDScript_24iw3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
 texture_filter = 1
