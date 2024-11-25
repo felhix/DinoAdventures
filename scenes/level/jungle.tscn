@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3t0wjwmctuf0"]
+
+[ext_resource type="PackedScene" uid="uid://13jknouytv3e" path="res://scenes/level/entity_level.tscn" id="1_b58xt"]
+[ext_resource type="PackedScene" uid="uid://d1bcyiw1jwn0f" path="res://scenes/background/jungle_background.tscn" id="2_fj48t"]
+[ext_resource type="PackedScene" uid="uid://cpdjf5eta3h4h" path="res://scenes/objects/ground.tscn" id="3_lcxxf"]
+
+[node name="Jungle" node_paths=PackedStringArray("back_day_night_color", "ground_day_night_color") instance=ExtResource("1_b58xt")]
+back_day_night_color = NodePath("JungleBackground/BackDayNightColor")
+ground_day_night_color = NodePath("Ground/JungleGround/GroundDayNightColor")
+level_time_left = 30000
+
+[node name="JungleBackground" parent="." index="1" instance=ExtResource("2_fj48t")]
+scale = Vector2(6.9, 6.9)
+transform = Transform2D(6.9, 0, 0, 6.9, 0, 0)
+
+[node name="BackDayNightColor" type="CanvasModulate" parent="JungleBackground" index="4"]
+
+[node name="JungleGround" parent="Ground" index="0" instance=ExtResource("3_lcxxf")]
+position = Vector2(-100, 130)
+
+[node name="GroundDayNightColor" type="CanvasModulate" parent="Ground/JungleGround" index="37"]
+position = Vector2(100, -930)
+
+[node name="FinishLine" parent="." index="5"]
+position = Vector2(40000, 1153)
