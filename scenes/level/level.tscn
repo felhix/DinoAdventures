@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c1osbnqgl3ygt"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_xy6pn"]
-[ext_resource type="PackedScene" path="res://scenes/player/flying_player/BirdSpawner.tscn" id="2_4xbv3"]
+[ext_resource type="PackedScene" uid="uid://cggo0a50wjukr" path="res://scenes/player/flying_player/BirdSpawner.tscn" id="2_4xbv3"]
 [ext_resource type="PackedScene" uid="uid://cpdjf5eta3h4h" path="res://scenes/objects/ground.tscn" id="2_kyehk"]
 [ext_resource type="PackedScene" uid="uid://d1bcyiw1jwn0f" path="res://scenes/background/jungle_background.tscn" id="4_mndoe"]
 [ext_resource type="PackedScene" uid="uid://rpj21y6sv7vx" path="res://scenes/UI/HUD/Score.tscn" id="5_h5m6e"]
@@ -34,41 +34,8 @@ position = Vector2(5, 924)
 [node name="FinishLine" parent="." instance=ExtResource("8_xaboy")]
 position = Vector2(40000, 1153)
 
-[node name="Ground2" parent="." instance=ExtResource("2_kyehk")]
+[node name="Ground" parent="." instance=ExtResource("2_kyehk")]
 position = Vector2(-100, 1080)
-
-[node name="Ground1" parent="." instance=ExtResource("2_kyehk")]
-position = Vector2(3745, 1080)
-
-[node name="Ground1" parent="Ground1" instance=ExtResource("2_kyehk")]
-position = Vector2(3840, 0)
-
-[node name="Ground1" parent="Ground1/Ground1" instance=ExtResource("2_kyehk")]
-position = Vector2(3840, 0)
-
-[node name="Ground1" parent="Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
-position = Vector2(3840, 0)
-
-[node name="Ground1" parent="Ground1/Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
-position = Vector2(3840, 0)
-
-[node name="Ground1" parent="Ground1/Ground1/Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
-position = Vector2(3840, 0)
-
-[node name="Ground1" parent="Ground1/Ground1/Ground1/Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
-position = Vector2(3840, 0)
-
-[node name="Ground1" parent="Ground1/Ground1/Ground1/Ground1/Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
-position = Vector2(3840, 0)
-
-[node name="Ground1" parent="Ground1/Ground1/Ground1/Ground1/Ground1/Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
-position = Vector2(3840, 0)
-
-[node name="Ground1" parent="Ground1/Ground1/Ground1/Ground1/Ground1/Ground1/Ground1/Ground1/Ground1" instance=ExtResource("2_kyehk")]
-position = Vector2(3840, 0)
-
-[node name="BackDayNightColor2" type="CanvasModulate" parent="Ground1"]
-position = Vector2(-3745, -1080)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ssiip")
