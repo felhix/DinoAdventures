@@ -37,6 +37,8 @@ position = Vector2(40000, 1153)
 [node name="Ground" parent="." instance=ExtResource("2_kyehk")]
 position = Vector2(-100, 1080)
 
+[node name="BackGroundDayNightColor" type="CanvasModulate" parent="Ground"]
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ssiip")
 
