@@ -2,6 +2,9 @@ extends Node
 
 # this is the global store
 
+const SAVE_PATH = "user://highscore.bin"
+
+
 const ACharScenes = [
 	preload("res://scenes/player/ground_player/bear/bear.tscn"),
 	preload("res://scenes/player/ground_player/adult_deer/adult_deer.tscn"),
@@ -21,10 +24,17 @@ var score = 0;
 var money : int = 0 
 var level: int = 0;
 
+var high_score = -1
+
 const level_to_scene = [
 	"res://scenes/level/level.tscn",
 	"res://scenes/level/city_dirty.tscn"
 ]
+
+func _ready():
+	high_score = load_highscore()
+	print(high_score)
+	
 
 func reset():
 	playerA = null
@@ -51,3 +61,18 @@ func addPlayerB(idx):
 	playerB = instantiatePlayerB()
 	playerB.AorB = 'B'
 	
+
+func save_highscore(highscore: int) -> void:
+	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	if file:
+		file.store_64(highscore)
+	else:
+		push_warning("Couldn't save highscore file: ", error_string(FileAccess.get_open_error()))
+
+func load_highscore() -> int:
+	var file := FileAccess.open(SAVE_PATH, FileAccess.READ)
+	if file:
+		return file.get_64()
+	else:
+		push_warning("Couldn't load highscore file: ", error_string(FileAccess.get_open_error()))
+		return -1
