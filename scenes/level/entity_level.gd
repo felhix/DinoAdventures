@@ -51,6 +51,10 @@ func _on_game_over():
 func _on_game_won():
 	started = false
 	finished = true
+	
+	if(time_left > Store.high_score):
+		Store.save_highscore(Store.time_left_at_won)
+	
 	var tree: SceneTree = get_tree()
 	won_timer.timeout.connect(
 		func _on_timeout():

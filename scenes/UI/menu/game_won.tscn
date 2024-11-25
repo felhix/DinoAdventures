@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqsl03r2lq7sn"]
+[gd_scene load_steps=6 format=3 uid="uid://bqsl03r2lq7sn"]
 
 [ext_resource type="Script" path="res://scenes/UI/menu/game_won.gd" id="1_6wh4i"]
 [ext_resource type="Theme" uid="uid://buw4n2gkus1jy" path="res://themes/title.tres" id="1_gthxq"]
 [ext_resource type="FontFile" uid="uid://8a0to4uorpp2" path="res://assets/font/SuperPixel-m2L8j.ttf" id="2_qi4uq"]
 [ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="3_wxymv"]
+[ext_resource type="PackedScene" uid="uid://b2bfbma8rwj3e" path="res://scenes/objects/star.tscn" id="5_87wyf"]
 
 [node name="GameWon" type="Control"]
 layout_mode = 3
@@ -113,3 +114,11 @@ theme_override_font_sizes/font_size = 46
 text = "Will you do better next time ?"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Nice" parent="." instance=ExtResource("5_87wyf")]
+position = Vector2(504, 160)
+scale = Vector2(6, 6)
+
+[node name="Nice2" parent="." instance=ExtResource("5_87wyf")]
+position = Vector2(1440, 160)
+scale = Vector2(6, 6)

@@ -4,7 +4,6 @@ extends Node
 
 const SAVE_PATH = "user://highscore.bin"
 
-
 const ACharScenes = [
 	preload("res://scenes/player/ground_player/bear/bear.tscn"),
 	preload("res://scenes/player/ground_player/adult_deer/adult_deer.tscn"),
