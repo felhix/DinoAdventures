@@ -2,7 +2,7 @@ class_name Level extends Node2D
 
 @onready var STORE: Store = get_node("/root/Store")
 @onready var BackDayNightColor: CanvasModulate = $Background/BackDayNightColor
-@onready var BackDayNightColorGround: CanvasModulate = $Ground1/BackDayNightColor2
+@onready var BackDayNightColorGround: CanvasModulate = $Ground/BackDayNightColor2
 @onready var FinishFlag = $FinishLine
 @onready var Score: ScoreUI = $Ui
 @onready var player_fx: PlayerFx = $PlayerFx
