@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://e1sjslkt81ff" path="res://assets/sprites/backgrounds/Jungle/4.Ground.png" id="1_xdqaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_je26y"]
-size = Vector2(3840, 156)
+size = Vector2(53514, 156)
 
 [node name="Ground" type="StaticBody2D"]
 collision_layer = 4
@@ -24,6 +24,171 @@ position = Vector2(3200, -360)
 scale = Vector2(4, 4)
 texture = ExtResource("1_xdqaq")
 
+[node name="4_ground4" type="Sprite2D" parent="."]
+position = Vector2(4480, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground5" type="Sprite2D" parent="."]
+position = Vector2(5760, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground6" type="Sprite2D" parent="."]
+position = Vector2(7040, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground7" type="Sprite2D" parent="."]
+position = Vector2(8320, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground8" type="Sprite2D" parent="."]
+position = Vector2(9600, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground9" type="Sprite2D" parent="."]
+position = Vector2(10880, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground10" type="Sprite2D" parent="."]
+position = Vector2(12160, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground11" type="Sprite2D" parent="."]
+position = Vector2(13440, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground12" type="Sprite2D" parent="."]
+position = Vector2(14720, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground13" type="Sprite2D" parent="."]
+position = Vector2(16000, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground14" type="Sprite2D" parent="."]
+position = Vector2(17280, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground15" type="Sprite2D" parent="."]
+position = Vector2(18560, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground16" type="Sprite2D" parent="."]
+position = Vector2(19840, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground17" type="Sprite2D" parent="."]
+position = Vector2(21120, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground18" type="Sprite2D" parent="."]
+position = Vector2(22400, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground19" type="Sprite2D" parent="."]
+position = Vector2(23680, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground20" type="Sprite2D" parent="."]
+position = Vector2(24960, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground21" type="Sprite2D" parent="."]
+position = Vector2(26240, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground22" type="Sprite2D" parent="."]
+position = Vector2(27520, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground23" type="Sprite2D" parent="."]
+position = Vector2(28800, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground24" type="Sprite2D" parent="."]
+position = Vector2(30080, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground25" type="Sprite2D" parent="."]
+position = Vector2(31360, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground26" type="Sprite2D" parent="."]
+position = Vector2(32640, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground27" type="Sprite2D" parent="."]
+position = Vector2(33920, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground28" type="Sprite2D" parent="."]
+position = Vector2(35200, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground29" type="Sprite2D" parent="."]
+position = Vector2(36480, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground30" type="Sprite2D" parent="."]
+position = Vector2(37760, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground31" type="Sprite2D" parent="."]
+position = Vector2(39040, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground32" type="Sprite2D" parent="."]
+position = Vector2(40320, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground33" type="Sprite2D" parent="."]
+position = Vector2(41600, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground34" type="Sprite2D" parent="."]
+position = Vector2(42880, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground35" type="Sprite2D" parent="."]
+position = Vector2(44160, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
+[node name="4_ground36" type="Sprite2D" parent="."]
+position = Vector2(45440, -360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_xdqaq")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1920, -78)
+position = Vector2(26757, -78)
 shape = SubResource("RectangleShape2D_je26y")
