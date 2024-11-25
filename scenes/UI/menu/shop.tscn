@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://cfv88bx22voa8" path="res://themes/text.tres" id="4_yvq56"]
 [ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="5_odyuj"]
 [ext_resource type="AudioStream" uid="uid://btm61bvsb6kho" path="res://assets/sounds/EricSkiff-Prologue.mp3" id="7_x1dqs"]
-[ext_resource type="PackedScene" uid="uid://csj48c6b5u8lf" path="res://scenes/objects/coin.tscn" id="8_es0tb"]
+[ext_resource type="PackedScene" path="res://scenes/objects/coin.tscn" id="8_es0tb"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3

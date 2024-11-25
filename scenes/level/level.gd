@@ -2,7 +2,7 @@ class_name Level extends Node2D
 
 @onready var STORE: Store = get_node("/root/Store")
 @onready var BackDayNightColor: CanvasModulate = $Background/BackDayNightColor
-@onready var BackDayNightColorGround: CanvasModulate = $Ground1/BackDayNightColor2
+@onready var BackDayNightColorGround: CanvasModulate = $Ground/BackDayNightColor2
 @onready var FinishFlag = $FinishLine
 @onready var Score: ScoreUI = $Ui
 @onready var player_fx: PlayerFx = $PlayerFx
@@ -89,7 +89,7 @@ func initialize_scene():
 		if player == null: continue
 		player.scale = Vector2(5,5)
 		player.position.x = get_viewport().size.x/2 +200 + i*70
-		player.position.y = $Ground1.position.y - 140
+		player.position.y = $Ground.position.y - 140
 		get_node('.').add_child(player)
 	
 		player.game_won.connect(_on_game_won)
