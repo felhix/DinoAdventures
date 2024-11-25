@@ -90,4 +90,4 @@ func initialize_scene():
 	set_camera_position(store.playerA.position.x, store.playerB.position.x)
 
 func set_camera_position(x1: int, x2: int):
-	$Camera2D.position.x =  (x1+x2)/2  - get_viewport().size.x/2 +100
+	$Camera2D.position.x =  (x1+x2)/2  - get_viewport().size.x*2/5
