@@ -53,7 +53,7 @@ func _on_game_won():
 	finished = true
 	
 	if(time_left > Store.high_score):
-		Store.save_highscore(Store.time_left)
+		Store.save_highscore(time_left)
 	
 	var tree: SceneTree = get_tree()
 	won_timer.timeout.connect(
