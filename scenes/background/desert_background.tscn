@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci4agxjn164wj"]
+
+[ext_resource type="Texture2D" uid="uid://cglyts7lrd82d" path="res://assets/sprites/backgrounds/Desert/1.Sky.png" id="1_vcx6p"]
+[ext_resource type="Texture2D" uid="uid://b50wt051kat6r" path="res://assets/sprites/backgrounds/Desert/2.Clouds.png" id="2_vr65n"]
+[ext_resource type="Texture2D" uid="uid://lvy85tqg4y5x" path="res://assets/sprites/backgrounds/Desert/3.Mountains.png" id="3_23dwh"]
+[ext_resource type="Texture2D" uid="uid://nx34derxxytu" path="res://assets/sprites/backgrounds/Desert/4.Dunes.png" id="4_xmygs"]
+
+[node name="DesertBackground" type="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vcx6p")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("2_vr65n")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.125, 1)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("3_23dwh")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.16, 1)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(161, 91)
+texture = ExtResource("4_xmygs")

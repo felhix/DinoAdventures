@@ -27,6 +27,7 @@ var high_score = -1
 
 const level_to_scene = [
 	"res://scenes/level/level.tscn",
+	"res://scenes/level/desert.tscn",
 	"res://scenes/level/city_dirty.tscn"
 ]
 
