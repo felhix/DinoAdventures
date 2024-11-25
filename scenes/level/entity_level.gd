@@ -30,7 +30,8 @@ func _process(delta: float) -> void:
 		back_day_night_color.color = Color("#00246e").lerp(Color("#FFF"), time_left / level_time_left)
 		ground_day_night_color.color = Color("#86d4ff").lerp(Color("#FFF"), time_left / level_time_left)
 		score_ui.time_left = time_left
-		
+		set_camera_position(store.playerA.position.x ,store.playerB.position.x)
+
 	if finished == true || started == true:
 		store.playerA.position.x += frame_speed * store.playerA.get_speed_multiplier()
 		store.playerB.position.x += frame_speed * store.playerB.get_speed_multiplier()
@@ -50,7 +51,6 @@ func _on_game_over():
 func _on_game_won():
 	started = false
 	finished = true
-	set_camera_position(finish_line.position.x, 500)
 	var tree: SceneTree = get_tree()
 	won_timer.timeout.connect(
 		func _on_timeout():
