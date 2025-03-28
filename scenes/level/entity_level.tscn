@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://13jknouytv3e"]
 
-[ext_resource type="Script" path="res://scenes/level/entity_level.gd" id="1_fosr8"]
+[ext_resource type="Script" uid="uid://6x1rkuu1xbo1" path="res://scenes/level/entity_level.gd" id="1_fosr8"]
 [ext_resource type="PackedScene" uid="uid://cggo0a50wjukr" path="res://scenes/player/flying_player/BirdSpawner.tscn" id="1_p0qte"]
 [ext_resource type="AudioStream" uid="uid://bsk1hwqunhrqm" path="res://assets/sounds/air-parsing-ben-benjamin.mp3" id="3_qbp7u"]
 [ext_resource type="PackedScene" uid="uid://rpj21y6sv7vx" path="res://scenes/UI/HUD/Score.tscn" id="4_7qyiv"]

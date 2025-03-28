@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://w1kgaimmny2t"]
 
-[ext_resource type="Script" path="res://scenes/objects/obstacle.gd" id="1_ujke7"]
+[ext_resource type="Script" uid="uid://7nhb0pyrrxef" path="res://scenes/objects/obstacle.gd" id="1_ujke7"]
 [ext_resource type="Texture2D" uid="uid://h5ftoqkq1qnc" path="res://assets/sprites/ennemies/humans/MiniThief.png" id="2_ba6uh"]
 [ext_resource type="Texture2D" uid="uid://bw37raf53ucps" path="res://assets/sprites/ennemies/humans/MiniMiner.png" id="2_i3uaq"]
 [ext_resource type="Texture2D" uid="uid://ceqh1npootj65" path="res://assets/sprites/ennemies/humans/MiniHunter.png" id="4_f6paw"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c1osbnqgl3ygt"]
 
-[ext_resource type="Script" path="res://scenes/level/level.gd" id="1_xy6pn"]
+[ext_resource type="Script" uid="uid://ducqltg4y10uv" path="res://scenes/level/level.gd" id="1_xy6pn"]
 [ext_resource type="PackedScene" uid="uid://cggo0a50wjukr" path="res://scenes/player/flying_player/BirdSpawner.tscn" id="2_4xbv3"]
 [ext_resource type="PackedScene" uid="uid://cpdjf5eta3h4h" path="res://scenes/objects/ground.tscn" id="2_kyehk"]
 [ext_resource type="PackedScene" uid="uid://d1bcyiw1jwn0f" path="res://scenes/background/jungle_background.tscn" id="4_mndoe"]

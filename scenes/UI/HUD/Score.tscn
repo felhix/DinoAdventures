@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://rpj21y6sv7vx"]
 
 [ext_resource type="FontFile" uid="uid://5106t150xf6g" path="res://assets/font/Apple ][.ttf" id="1_a3gib"]
-[ext_resource type="Script" path="res://scenes/UI/HUD/score.gd" id="1_eymnr"]
+[ext_resource type="Script" uid="uid://bnegqk4i67rt6" path="res://scenes/UI/HUD/score.gd" id="1_eymnr"]
 
 [node name="ScoreUI" type="CanvasLayer"]
 script = ExtResource("1_eymnr")
